@@ -51,4 +51,22 @@ sufijos xs = reverse' [drop (length xs - n) xs | n <- [0 .. length xs]]
 -- B
 sublistas :: [a] -> [[a]]
 sublistas [] = []
-sublistas xs = [take n (drop i xs) | n <- [1 .. (length xs)], i <- [0 .. (length xs) - 1]]
+sublistas xs = [take n (drop i xs) | n <- [1 .. (length xs)], i <- [0 .. length xs - 1], length (drop i xs) >= n]
+
+-- C
+permuta :: [a] -> [[a]]
+permuta [] = [[]]
+permuta (x : xs) = concat [intercalado x ys | ys <- permuta xs]
+
+intercalado :: a -> [a] -> [[a]]
+intercalado x [] = [[x]]
+intercalado x (y : ys) = (x : y : ys) : [y : zs | zs <- intercalado x ys]
+
+-- D
+sumandos :: (Integral a) => a -> [[a]]
+sumandos n = sumandos' n 0 1
+
+sumandos' :: (Integral a) => a -> a -> a -> [[a]]
+sumandos' n x i
+  | x == n = [[]]
+  | otherwise = [z : zs | z <- [y | y <- [1 .. n], y + x <= n, y >= i], zs <- sumandos' n (z + x) z]
