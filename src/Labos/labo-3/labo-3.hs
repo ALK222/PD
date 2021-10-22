@@ -9,8 +9,8 @@ last' :: [a] -> a
 last' (x : xs) = foldl (\_ curr -> curr) x xs
 
 -- B
-foldReverse :: [a] -> [a]
-foldReverse = foldl (\curr next -> next : curr) []
+reverse' :: [a] -> [a]
+reverse' = foldl (\curr next -> next : curr) []
 
 -- C
 all' :: (a -> Bool) -> [a] -> Bool
@@ -37,10 +37,18 @@ listaNegPos :: [Integer]
 listaNegPos = [m | n <- [1 .. 100], m <- [n, negate n]]
 
 -- EJERICICO 3
--- listaTuplas = [m | x <- [0 ..], y <- [0 ..], curr <- [0 ..], m <- if x + y == curr then (x, y) else [()]]
+listaParejas' :: (Num b, Enum b, Eq b) => b -> [(b, b)]
+listaParejas' n = [(x, y) | sumaTotal <- [0 .. n], x <- [0 .. sumaTotal], y <- [0 .. sumaTotal], x + y == sumaTotal]
+
+listaParejas :: Integral a => [(a, a)]
+listaParejas = [(x, y) | sumaTotal <- [0 ..], x <- [0 .. sumaTotal], y <- [0 .. sumaTotal], x + y == sumaTotal]
 
 -- EJERICIO 4
 -- A
 sufijos :: [a] -> [[a]]
-sufijos [] = []
-sufijos xs = [m | n <- tail xs, m <- n]
+sufijos xs = reverse' [drop (length xs - n) xs | n <- [0 .. length xs]]
+
+-- B
+sublistas :: [a] -> [[a]]
+sublistas [] = []
+sublistas xs = [take n (drop i xs) | n <- [1 .. (length xs)], i <- [0 .. (length xs) - 1]]
