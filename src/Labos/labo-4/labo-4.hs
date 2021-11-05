@@ -1,18 +1,23 @@
+-- Los warnings de que faltan metodos son muy cansinos
+{-# OPTIONS_GHC -Wno-missing-methods #-}
+
 -- ALUMNOS: ALEJANDRO BARRACHINA ARGUDO
 --          CARLOS MURCIA MORILLA
 
 -- EJERCICIO 1
-type Punto = (Int, Int)
+data Punto = P Int Int
 
 data Direccion = ARRIBA | ABAJO | IZQUIERDA | DERECHA deriving (Eq, Ord, Show)
+
+instance Show Punto where show (P a b) = "(" ++ show a ++ "," ++ show b ++ ")"
 
 -- A
 mueve :: Punto -> Direccion -> Punto
 mueve p m
-  | m == ARRIBA = if snd p + 1 > 100 then (fst p, 100) else (fst p, snd p + 1)
-  | m == ABAJO = if snd p - 1 < 0 then (fst p, 0) else (fst p, snd p - 1)
-  | m == IZQUIERDA = if fst p - 1 < 0 then (0, snd p) else (fst p - 1, snd p)
-  | m == DERECHA = if fst p + 1 > 100 then (100, snd p) else (fst p + 1, snd p)
+  | m == ARRIBA = case p of (P a b) -> if b + 1 > 100 then P a 100 else P a (b + 1)
+  | m == ABAJO = case p of (P a b) -> if b - 1 < 0 then P a 0 else P a (b - 1)
+  | m == IZQUIERDA = case p of (P a b) -> if a - 1 < 0 then P 0 b else P (a - 1) b
+  | m == DERECHA = case p of (P a b) -> if a + 1 > 100 then P 100 b else P (a + 1) b
   | otherwise = error "Dirección no valida"
 
 -- B
@@ -22,9 +27,8 @@ destino p ms = foldl mueve p ms
 
 -- C
 trayectoria :: Punto -> [Direccion] -> [Punto]
-trayectoria p [] = [p]
-
--- trayectoria p ms = foldl (\m -> p ++ [mueve p m]) ms
+-- trayectoria p [] = [p]
+trayectoria p = foldl (\dir m -> dir ++ [mueve (last dir) m]) [p]
 
 --EJERCICIO 2
 data Nat = Cero | Suc Nat deriving (Eq, Ord)
@@ -50,7 +54,7 @@ instance Show Nat where show a = show (natToInt a)
 -- Ejercicio 3
 data Complejo = C Float Float deriving (Eq)
 
--- instance Show Complejo where show (C a b) = if b > 0 then show a + "+" + show b + "i" else show a + show b + "i"
+instance Show Complejo where show (C a b) = if b > 0 then show a ++ "+" ++ show b ++ "i" else show a ++ show b ++ "i"
 
 instance Num Complejo where
   a + b = case (a, b) of (C x y, C x1 y1) -> C (x + x1) (y + y1)
@@ -72,6 +76,3 @@ instance Medible Bool where
 instance (Medible a) => Medible [a] where
   medida [] = 0
   medida (x : xs) = medida x + medida xs
-
-instance Medible (Int, Int) where
-  medida a b = case (a, b) of (C x y, C x1 y1) -> sqrt (((x + x1) ^ 2) + ((y + y1) ^ 2))
