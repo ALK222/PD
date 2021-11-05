@@ -1,11 +1,10 @@
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-
 -- ALUMNOS: ALEJANDRO BARRACHINA ARGUDO
 --          CARLOS MURCIA MORILLA
 
 -- EJERCICIO 1
 -- A
 last' :: [a] -> a
+last' [] = error "Lista vacia"
 last' (x : xs) = foldl (\_ curr -> curr) x xs
 
 -- B
@@ -18,23 +17,26 @@ all' f = foldl (\acc curr -> f curr && acc) True
 
 -- D
 min' :: Ord a => [a] -> a
-min' (x : xs) = foldl (\minimun curr -> if curr < minimun then curr else minimun) x xs
+min' [] = error "Lista vacia"
+min' (x : xs) = foldl (\minimun curr -> min minimun curr) x xs
 
 -- E
 map' :: (a -> b) -> [a] -> [b]
-map' filtro = foldl (\x y -> x ++ [filtro y]) []
+map' filtro = foldr (\x xs -> filtro x : xs) []
 
 -- F
 filter' :: (a -> Bool) -> [a] -> [a]
-filter' filtro = foldl (\x y -> if filtro y then x ++ [y] else x) []
+filter' filtro = foldr (\x xs -> if filtro x then x : xs else xs) []
 
 -- G
 takeWhile' :: (a -> Bool) -> [a] -> [a]
 takeWhile' filtro = foldr (\x y -> if filtro x then x : y else []) []
 
 -- EJERCICIO 2
+-- listaNegPos :: [Integer]
+-- listaNegPos = [m | n <- [1 .. 100], m <- [n, negate n]]
 listaNegPos :: [Integer]
-listaNegPos = [m | n <- [1 .. 100], m <- [n, negate n]]
+listaNegPos = foldl (\xs x -> xs ++ [x, - x]) [] [1 .. 100]
 
 -- EJERICICO 3
 listaParejas' :: (Num b, Enum b, Eq b) => b -> [(b, b)]
@@ -46,7 +48,7 @@ listaParejas = [(x, y) | sumaTotal <- [0 ..], x <- [0 .. sumaTotal], y <- [0 .. 
 -- EJERICIO 4
 -- A
 sufijos :: [a] -> [[a]]
-sufijos xs = reverse' [drop (length xs - n) xs | n <- [0 .. length xs]]
+sufijos xs = [drop x xs | x <- [0 .. length xs]]
 
 -- B
 sublistas :: [a] -> [[a]]
