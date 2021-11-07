@@ -7,27 +7,40 @@
 -- EJERCICIO 1
 data Punto = P Int Int
 
+pointSum :: (Ord a, Num a) => a -> a -> a
+-- Adds a number to a given coordinate in a range of [0..100]
+pointSum a b
+  | a + b > 100 = (a + b - 1) - 100
+  | a + b < 0 = negate (a + b)
+  | otherwise = a + b
+
 data Direccion = ARRIBA | ABAJO | IZQUIERDA | DERECHA deriving (Eq, Ord, Show)
 
 instance Show Punto where show (P a b) = "(" ++ show a ++ "," ++ show b ++ ")"
 
 -- A
 mueve :: Punto -> Direccion -> Punto
+
+-- | Moves a point in a given direction
 mueve p m
-  | m == ARRIBA = case p of (P a b) -> if b + 1 > 100 then P a 100 else P a (b + 1)
-  | m == ABAJO = case p of (P a b) -> if b - 1 < 0 then P a 0 else P a (b - 1)
-  | m == IZQUIERDA = case p of (P a b) -> if a - 1 < 0 then P 0 b else P (a - 1) b
-  | m == DERECHA = case p of (P a b) -> if a + 1 > 100 then P 100 b else P (a + 1) b
+  | m == ARRIBA = case p of (P a b) -> P a (pointSum b 1)
+  | m == ABAJO = case p of (P a b) -> P a (pointSum b (negate 1))
+  | m == DERECHA = case p of (P a b) -> P (pointSum a 1) b
+  | m == IZQUIERDA = case p of (P a b) -> P (pointSum a (negate 1)) b
   | otherwise = error "Dirección no valida"
 
 -- B
+
 destino :: Punto -> [Direccion] -> Punto
+
+-- | moves a point across a list of directions
 destino p [] = p
 destino p ms = foldl mueve p ms
 
 -- C
 trayectoria :: Punto -> [Direccion] -> [Punto]
--- trayectoria p [] = [p]
+
+-- | Shows a list of points where a point has been moving given a direcction list
 trayectoria p = foldl (\dir m -> dir ++ [mueve (last dir) m]) [p]
 
 --EJERCICIO 2
