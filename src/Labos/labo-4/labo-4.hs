@@ -22,12 +22,10 @@ instance Show Punto where show (P a b) = "(" ++ show a ++ "," ++ show b ++ ")"
 mueve :: Punto -> Direccion -> Punto
 
 -- | Moves a point in a given direction
-mueve p m
-  | m == ARRIBA = case p of (P a b) -> P a (pointSum b 1)
-  | m == ABAJO = case p of (P a b) -> P a (pointSum b (negate 1))
-  | m == DERECHA = case p of (P a b) -> P (pointSum a 1) b
-  | m == IZQUIERDA = case p of (P a b) -> P (pointSum a (negate 1)) b
-  | otherwise = error "Dirección no valida"
+mueve p ARRIBA = case p of (P a b) -> P a (pointSum b 1)
+mueve p ABAJO = case p of (P a b) -> P a (pointSum b (negate 1))
+mueve p DERECHA = case p of (P a b) -> P (pointSum a 1) b
+mueve p IZQUIERDA = case p of (P a b) -> P (pointSum a (negate 1)) b
 
 -- B
 
@@ -49,13 +47,15 @@ data Nat = Cero | Suc Nat deriving (Eq, Ord)
 -- A
 infix 4 ~+
 
-(~+) :: Nat -> Nat -> Int
-a ~+ b = natToInt a + natToInt b
+(~+) :: Nat -> Nat -> Nat
+Cero ~+ x = x
+Suc y ~+ x = y ~+ Suc x
 
-infix 9 ~*
+infix 6 ~*
 
-(~*) :: Nat -> Nat -> Int
-a ~* b = natToInt a * natToInt b
+(~*) :: Nat -> Nat -> Nat
+x ~* Cero = Cero
+x ~* (Suc y) = x ~+ (x ~* y)
 
 -- B
 natToInt :: Nat -> Int
@@ -89,3 +89,6 @@ instance Medible Bool where
 instance (Medible a) => Medible [a] where
   medida [] = 0
   medida (x : xs) = medida x + medida xs
+
+instance (Medible a, Medible b) => Medible (a, b) where
+  medida (x, y) = medida x + medida y
