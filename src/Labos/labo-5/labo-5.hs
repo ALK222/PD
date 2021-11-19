@@ -65,6 +65,7 @@ getDatosMatriz filas columnas = do
 -- B
 
 dibujaMatriz :: Matriz -> IO ()
+dibujaMatriz [] = putStr ""
 dibujaMatriz m = do
   if head m == []
     then do
