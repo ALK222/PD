@@ -74,3 +74,8 @@ dibujaMatriz m = do
     else do
       putStr (show (head (head m)) ++ " ")
       dibujaMatriz (tail (head m) : tail m)
+
+mostrarMatrizNueva :: IO ()
+mostrarMatrizNueva = do
+  m <- getMatriz
+  dibujaMatriz m
