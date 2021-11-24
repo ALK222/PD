@@ -41,8 +41,8 @@ getMatriz = do
   getDatosMatriz filas columnas
 
 getFilas :: Int -> IO [Float]
-getFilas numColumnas = do
-  if (numColumnas == 1)
+getFilas numColumnas =
+  if numColumnas == 1
     then do
       num <- getFloat
       return [num]
@@ -52,8 +52,8 @@ getFilas numColumnas = do
       return (num : resto)
 
 getDatosMatriz :: Int -> Int -> IO Matriz
-getDatosMatriz filas columnas = do
-  if (filas == 1)
+getDatosMatriz filas columnas =
+  if filas == 1
     then do
       fila <- getFilas columnas
       return [fila]
@@ -66,8 +66,8 @@ getDatosMatriz filas columnas = do
 
 dibujaMatriz :: Matriz -> IO ()
 dibujaMatriz [] = putStr ""
-dibujaMatriz m = do
-  if head m == []
+dibujaMatriz m =
+  if null (head m)
     then do
       putStrLn "\n"
       dibujaMatriz (tail m)
@@ -79,3 +79,25 @@ mostrarMatrizNueva :: IO ()
 mostrarMatrizNueva = do
   m <- getMatriz
   dibujaMatriz m
+
+-- EJERICIO 3
+formatea :: String -> String -> Int -> IO ()
+formatea fileIn fileOut n = do
+  contenido <- readFile fileIn
+  writeFile fileOut (formatear n contenido)
+
+-- Funcion que formatea el contenido del fichero
+formatear :: Int -> String -> String
+formatear n strIn = unlines (map (justify n) (lines strIn))
+
+-- Funcion que formatea una linea
+justify :: Int -> String -> String
+justify n xs
+  | length (words xs) == 1 = xs
+  | length xs >= n = xs
+  | otherwise = concatMap (addSpaces m) (words xs)
+  where
+    m = div (n - sum (map length (words xs))) (length (words xs) - 1)
+
+addSpaces :: Int -> String -> String
+addSpaces n p = p ++ [' ' | n <- [1 .. n]]
