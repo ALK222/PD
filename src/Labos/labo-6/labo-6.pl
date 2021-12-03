@@ -13,14 +13,16 @@
 % ?- cima(Y), pila_izquierda(X,Y), cima(X) -> Y = g, X = d
 % ?- pilas_contiguas(X,e), sobre(Y,X) ->  x = a, Y = b
 % ?- por_arriba_ls(a,X), member(Y, X), por_encima_de(Z,Y) -> 
-total_fichas(_, 0).
-total_fichas(X, Acc):- (cima(X) = false -> total_fichas(X, Acc + 1); total_fichas(X, 0)).
-mas_por_encima_que(X,Y) :- Accx > Accy, total_fichas(X, Accx), total_fichas(Y, Accy).
+mas_por_encima_que(_, []).
+mas_por_encima_que(X,Y) :- por_arriba_ls(X,Xs), por_arriba_ls(Y,Ys), mas_por_encima_que(Xs,Ys).
+mas_por_encima_que([X|Xs], [Y|Ys]) :- mas_por_encima_que(Xs, Ys).
 
 
 % EJERICICO 2 
-mezcla([], [], []).
-mezcla([X|Xs], [Y|Ys], [Z1,Z2|Zs]):- (X @<Y -> mezcla(Xs, Ys, [X | Z]); mezcla(Xs,Ys, [Y|Z])).
+mezcla([], _, []).
+mezcla(_, [], []).
+mezcla([X|Xs], [Y|Ys], [X,Y|Z]) :-
+	mezcla(Xs, Ys, Z).
 
 % EJERCICIO 3
 my_reverse([], []).
