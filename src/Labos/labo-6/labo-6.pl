@@ -1,6 +1,6 @@
 % ALUMNOS: ALEJANDRO BARRACHINA ARGUDO
 %          CARLOS MURCIA MORILLA
-
+:-[fichas].%incluimos el fichero de fichas para mayor comodidad
 
 % EJERCICIO 1
 
@@ -19,19 +19,22 @@ mas_por_encima_que([_|Xs], [_|Ys]) :- mas_por_encima_que(Xs, Ys).
 
 
 % EJERICICO 2 
-% Asumiendo que el enunciado te pide crear una nueva lista combinando las dos de forma ordenada, esta es la solución.
 mezcla([],Y,Y).
 mezcla(X,[],X).
 mezcla([X|Xs],[Y|Ys],[X|Z]):- X @< Y, mezcla(Xs,[Y|Ys],Z).
 mezcla([X|Xs],[Y|Ys],[Y|Z]):- mezcla([X|Xs],Ys,Z).
 
 % EJERCICIO 3
-my_reverse([],[]).
-my_reverse(X, [X]).
-my_reverse([X | Xs], Y):- my_reverse(Xs, Y).
-es_simetrica(X):- X = my_reverse(X).
-simetricas([Xs|Xss], Yss):- (es_simetrica(Xs)->simetricas(Xss, [Xs | Yss]); simetricas(Xs,Yss)).
+% Implementación de reverse ya que no podemos utilizar el dado por Prolog
+my_reverse(Xs,Ys) :- my_reverse(Xs,[],Ys).
+my_reverse([],Y,Y).
+my_reverse([X|Xs],Reverse,Aux) :- my_reverse(Xs,[X|Reverse],Aux).
+
+simetricas([],[]).
+simetricas([Xs|Xss], [Xs |Yss]):- my_reverse(Xs,Xs), simetricas(Xss, Yss).
+simetricas([_|Xss], Yss):- simetricas(Xss,Yss).
+
 
 % EJERCICIO 4 
 numnodos(0, void).
-numnodos(1 + Z1 + Z2, tree(_,I,D)):- numnodos(I,Z1), numnodos(D,Z2). 
+numnodos(1 + Z1 + Z2, arbol(_,I,D)):- numnodos(I,Z1), numnodos(D,Z2). 
