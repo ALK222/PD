@@ -15,22 +15,21 @@
 % ?- por_arriba_ls(a,X), member(Y, X), por_encima_de(Z,Y) -> 
 mas_por_encima_que(_, []).
 mas_por_encima_que(X,Y) :- por_arriba_ls(X,Xs), por_arriba_ls(Y,Ys), mas_por_encima_que(Xs,Ys).
-mas_por_encima_que([X|Xs], [Y|Ys]) :- mas_por_encima_que(Xs, Ys).
+mas_por_encima_que([_|Xs], [_|Ys]) :- mas_por_encima_que(Xs, Ys).
 
 
 % EJERICICO 2 
-mezcla([], _, []).
-mezcla(_, [], []).
-mezcla([X|Xs], [Y|Ys], [X,Y|Z]) :-
-	mezcla(Xs, Ys, Z).
+% Asumiendo que el enunciado te pide crear una nueva lista combinando las dos de forma ordenada, esta es la solución.
+mezcla([],Y,Y).
+mezcla(X,[],X).
+mezcla([X|Xs],[Y|Ys],[X|Z]):- X @< Y, mezcla(Xs,[Y|Ys],Z).
+mezcla([X|Xs],[Y|Ys],[Y|Z]):- mezcla([X|Xs],Ys,Z).
 
 % EJERCICIO 3
-my_reverse([], []).
-my_reverse(X,[X]).
-my_reverse([X | Xs], Y):-my_reverse(Xs, [X|Y]).
-es_simetrica([]).
-% es_simetrica([X]).
-% es_simetrica([X | Xs]) :-
+my_reverse([],[]).
+my_reverse(X, [X]).
+my_reverse([X | Xs], Y):- my_reverse(Xs, Y).
+es_simetrica(X):- X = my_reverse(X).
 simetricas([Xs|Xss], Yss):- (es_simetrica(Xs)->simetricas(Xss, [Xs | Yss]); simetricas(Xs,Yss)).
 
 % EJERCICIO 4 
