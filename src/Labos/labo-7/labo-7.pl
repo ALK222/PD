@@ -37,9 +37,16 @@ sublistas(LSX, Xs):- findall(X, sublista(X, Xs), LSX).
 
 
 % EJERCICIO 3
-aplana([],[]).
-aplana([[H|T]|Xss], [H|X]) :- aplana([T|Xss], X).
-aplana([H|Xss], [H|X]):- aplana(Xss, X).
+aplana([],[]):-!.
+
+aplana([H|Xss],Xs):-
+    !,
+    aplana(H, FlatH),
+    aplana(Xss, FlatXss),
+    append(FlatH, FlatXss, Xs).
+aplana(L,[L]).
+% aplana([[H|T]|Xss], [H|X]) :- aplana([T|Xss], X).
+% aplana([H|Xss], [H|X]):- aplana(Xss, X).
 % aplana(Xss, X) :-
 
 % EJERCICO 4
