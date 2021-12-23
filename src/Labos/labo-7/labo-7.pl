@@ -37,13 +37,11 @@ elimina3([X|R], Y, [X|NR]) :- Y\==X, elimina3(R,Y, NR).
 
 % PARTE 2
 % EJERCICIO 1
-
-
 maximo(void, 0).
 maximo(arbol(E, Izq, Der), X) :- maximo(Izq, X1), % X1 es el maximo del hijo izquierdo
                                  maximo(Der,X2), % X2 es el maximo del hijo derecho
-                                 (X1 > X2 -> N is X1; N is X2), % Se evalua que hijo tiene el mayor valor
-                                 (E > N -> X is E; X is N). % Evaluamos si la raiz del nodo es mayor que el maximo de los hijos
+                                 (X1 > X2 -> N is X1; N = X2), % Se evalua que hijo tiene el mayor valor
+                                 (E > N -> X is E; X = N). % Evaluamos si la raiz del nodo es mayor que el maximo de los hijos
 
 % EJERCICIO 2
 sublista( [], _ ).
@@ -52,6 +50,15 @@ sublista( [X|XS], [_|XSS] ) :- sublista( [X|XS], XSS ).
 
 sublistas(LSX, Xs):- findall(X, sublista(X, Xs), LSX).
 
+% solucion de susana
+
+sublista1(Xs,[_|Ys]) :- sublista1(Xs,Ys).
+sublista1(Xs,Ys) :- prefijo(Xs,Ys).
+
+prefijo([],_).
+prefijo([X|Xs],[X|Ys]) :- prefijo(Xs,Ys).
+
+sublistas1(Xs,Xss) :- setof(S,sublista1(S,Xs),Xss).
 
 % EJERCICIO 3: Dos maneras
 % Sin usar append
@@ -75,11 +82,17 @@ aplana([H|Xss],Xs):-
     append(FlatH, FlatXss, Xs). % Union de las listas aplanadas
 aplana(L,[L]).
 
+% solucion de susana
+aplana2([],[]):-!.
+aplana2([[]|L],LA):- !, aplana(L,LA).
+aplana2([[X|Xs]|L], LA) :- !, append([X|Xs], L, L1), aplana2(L1,LA).
+aplana2([X|L], [X|LA]):- atomic(X), aplana(L,LA).
+
+
 % EJERCICO 4
-hanoi(1,A,B,_,[A -> B]).
+hanoi(1,A,B,_,[(A,B)]).
 hanoi(N,A,B,C,L):- 
-    N>1,
     N1 is N-1,
     hanoi(N1,A,C,B,L1), % Movimientos de la inicial a la final
     hanoi(N1,C,B,A,L2), % Movimientos de la final a la inicial
-    append(L1,[A -> B|L2],L). % Union de todos los movimientos en L
+    append(L1,[(A,B)|L2],L). % Union de todos los movimientos en L
