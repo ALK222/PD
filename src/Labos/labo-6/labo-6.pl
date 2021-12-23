@@ -14,8 +14,11 @@
 % ?- pilas_contiguas(X,e), sobre(Y,X) ->  x = a, Y = b
 % ?- por_arriba_ls(a,X), member(Y, X), por_encima_de(Z,Y) -> 
 mas_por_encima_que(_, []).
-mas_por_encima_que(X,Y) :- por_arriba_ls(X,Xs), por_arriba_ls(Y,Ys), mas_por_encima_que(Xs,Ys).
-mas_por_encima_que([_|Xs], [_|Ys]) :- mas_por_encima_que(Xs, Ys).
+mas_por_encima_que(X,Y) :- 
+    por_arriba_ls(X,Xs), 
+    por_arriba_ls(Y,Ys), 
+    mas_por_encima_que(Xs,Ys).
+% mas_por_encima_que([_|Xs], [_|Ys]) :- mas_por_encima_que(Xs, Ys).
 
 
 % EJERICICO 2 
@@ -37,4 +40,7 @@ simetricas([_|Xss], Yss):- simetricas(Xss,Yss).
 
 % EJERCICIO 4 
 numnodos(0, void).
-numnodos(1 + Z1 + Z2, arbol(_,I,D)):- numnodos(I,Z1), numnodos(D,Z2). 
+numnodos(X, arbol(_,I,D)):- 
+    numnodos(I,Z1), 
+    numnodos(D,Z2),
+    X is 1 + z1 + z2. 
