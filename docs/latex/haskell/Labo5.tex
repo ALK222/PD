@@ -1,0 +1,56 @@
+\haddockmoduleheading{Labo5}
+\label{module:Labo5}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Labo5 (
+    getInt, adivina, Matriz, getFloat, getMatriz, getFilas,
+    getDatosMatriz, dibujaMatriz, mostrarMatrizNueva, formatea,
+    formatear, justify, addSpaces
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+getInt :: IO Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+adivina :: Int -> IO ()
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+type Matriz = {\char 91}{\char 91}Float{\char 93}{\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+getFloat :: IO Float
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+getMatriz :: IO Matriz
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+getFilas :: Int -> IO {\char 91}Float{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+getDatosMatriz :: Int -> Int -> IO Matriz
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+dibujaMatriz :: Matriz -> IO ()
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+mostrarMatrizNueva :: IO ()
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+formatea :: String -> String -> Int -> IO ()
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+formatear :: Int -> String -> String
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+justify :: Int -> String -> String
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+addSpaces :: Int -> String -> String
+\end{tabular}]
+\end{haddockdesc}

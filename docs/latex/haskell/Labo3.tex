@@ -1,0 +1,61 @@
+\haddockmoduleheading{Labo3}
+\label{module:Labo3}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Labo3 (
+    last', reverse', all', min', map', filter', takeWhile',
+    listaNegPos, listaParejas', listaParejas, sufijos, sublistas,
+    permuta, intercalado, sumandos, sumandos'
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+last' :: {\char 91}a{\char 93} -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+reverse' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+all' :: (a -> Bool) -> {\char 91}a{\char 93} -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+min' :: Ord a => {\char 91}a{\char 93} -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+map' :: (a -> b) -> {\char 91}a{\char 93} -> {\char 91}b{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+filter' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+takeWhile' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaNegPos :: {\char 91}Integer{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaParejas' :: (Num b, Enum b, Eq b) => b -> {\char 91}(b, b){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaParejas :: Integral a => {\char 91}(a, a){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sufijos :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sublistas :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+permuta :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+intercalado :: a -> {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sumandos :: Integral a => a -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sumandos' :: Integral a => a -> a -> a -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\end{haddockdesc}

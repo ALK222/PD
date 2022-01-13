@@ -1,0 +1,55 @@
+\haddockmoduleheading{Labo2}
+\label{module:Labo2}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Labo2 (
+    cuadrados, cuadradoInverso, rsumcos, sumMenores,
+    siguientePrimo, factores, isPrime, iguales, menor, mayorA, ex,
+    filter2, filters, mapx
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+cuadrados :: (Num b, Enum b) => b -> {\char 91}b{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+cuadradoInverso :: (Num a, Enum a) => a -> {\char 91}(a, a){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+rsumcos :: (Floating a, Enum a) => a -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sumMenores :: Integral a => a -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+siguientePrimo :: Integral a => a -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+factores :: Integral a => a -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+isPrime :: Integral a => a -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+iguales :: Eq b => (a -> b) -> (a -> b) -> a -> a -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+menor :: (Enum a, Num a) => a -> (a -> Bool) -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+mayorA :: Enum a => a -> a -> (a -> Bool) -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+ex :: Enum a => a -> a -> (a -> Bool) -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+filter2 :: {\char 91}a{\char 93} -> (a -> Bool) -> (a -> Bool) -> ({\char 91}a{\char 93}, {\char 91}a{\char 93})
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+filters :: {\char 91}a{\char 93} -> {\char 91}a -> Bool{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+mapx :: t -> {\char 91}t -> b{\char 93} -> {\char 91}b{\char 93}
+\end{tabular}]
+\end{haddockdesc}

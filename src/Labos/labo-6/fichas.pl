@@ -71,3 +71,13 @@ poner_encima(X,Y) :- cima(X), cima(Y), pilas_contiguas(X,Y).
 % uso: pilas_contiguas(e/s,e/s).
 pilas_contiguas(X,Y) :- pila_izquierda(X,Y).
 pilas_contiguas(X,Y) :- pila_izquierda(Y,X).
+
+% ?- por_encima_de(X,c) -> X = d
+% ?- por_encima_de(c,X) -> X = b
+% ?- por_arriba_ls(b, X) -> X = [c,d]
+% ?- por_arriba_ls(X,Y) ->  X = d, Y = []
+% ?- poner_encima(X,f) -> false
+% ?- por_encima_de(X,Y), cima(Y) ->false
+% ?- cima(Y), pila_izquierda(X,Y), cima(X) -> Y = g, X = d
+% ?- pilas_contiguas(X,e), sobre(Y,X) ->  x = a, Y = b
+% ?- por_arriba_ls(a,X), member(Y, X), por_encima_de(Z,Y) ->

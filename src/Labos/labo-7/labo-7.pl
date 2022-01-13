@@ -1,6 +1,13 @@
-% ALUMNOS: ALEJANDRO BARRACHINA ARGUDO
-%          CARLOS MURCIA MORILLA
-
+:- module(labo7, [maximo/2, sublista/2, sublistas/2]).
+/** labo6
+ * 
+ * Laboratorio 6 de PD FDI UCM 21-22
+ * 
+ * @author Alejandro Barrachina Argudo
+ * @author Carlos Murcia Morilla
+ * 
+ * @license GLP 3.0
+ */
 % PARTE 1
 elimina1([], _, []).
 elimina1([X|R], Y, NR) :- Y == X, elimina1(R,Y,NR).

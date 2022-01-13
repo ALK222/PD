@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>labo-6.pl</title>
+
+<link rel="stylesheet" type="text/css" href="pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+
+<h1 class="file"><span style="float:right"></span>labo-6.pl</h1>
+
+<dl>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="mas_por_encima_que/2"><b class="pred">mas_por_encima_que</b><var class="arglist">(+List:list, +List:list)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True if X has more elements above itsefl than Y.
+
+<p>
+X and Y can be from different stacks.</p>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- mas_por_encima_que(a,b).
+false.
+?- mas_por_encima_que(h,i).
+true.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- element to be compared</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- element used as comparator</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="mezcla/3"><b class="pred">mezcla</b><var class="arglist">(+List:list, +List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">mezcla</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Takes two lists and makes a new list with all the elements of both lists in order.
+
+<p>
+X and Y can be lists from different types.</p>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- mezcla([1,2],[2,3],Y).
+Y=[1,2,2,3].
+?- mezcla([1,2],[2,3],[1,a]).
+false.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- First list to be used</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- Second list to be used</td></tr>
+<tr><td><var>Z</var></td><td class="argdescr">- Shorted list with elements from the two other lists</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="my_reverse/2"><b class="pred">my_reverse</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Takes a list and creates its reverse.
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- my_reverse([1,2],Y).
+Y=[2,1].
+?- my_reverse([1,2],[1,2]).
+false.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- <var>List</var> to be used</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- Reversed list</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="my_reverse/3"><b class="pred">my_reverse</b><var class="arglist">(+List:list, -List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list, -List:list)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Auxiliary predicate for <a href="labo-6.html#my_reverse/2">my_reverse/2</a>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- my_reverse([1,2],[],Y).
+Y=[2,1].
+?- my_reverse([1,2],Y,Z).
+Z=[2,1|Y].
+?- my_reverse([1,2],[],[1,2]).
+false.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- <var>List</var> to be used</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- Auxiliary list</td></tr>
+<tr><td><var>Z</var></td><td class="argdescr">- Reversed list</td></tr>
+</table>
+
+</dd>
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="labo-6.html#my_reverse/2">my_reverse/2</a></dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="simetricas/2"><b class="pred">simetricas</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">simetricas</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Takes a list of lists and returns a list with only the symmetric lists.
+
+<p>
+All lists in X can be of different types</p>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- simetricas([1,[1,2,2,1],[1,a]], Y).
+Y=[[1,2,2,1]].
+?- simetricas([1,[1,a]],Z).
+Z = [].
+?- simetricas([1,[1,2,2,1],[1,a]], [[1]]).
+false.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- <var>List</var> to be used</td></tr>
+<tr><td><var>Yss</var></td><td class="argdescr">- <var>List</var> of symmetric lists</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="numnodos/2"><b class="pred">numnodos</b><var class="arglist">(+Int:int, +Arbol:arbol)</var></a> is <b class="det">det</b></dt><dd class="defbody">Takes a tree a counts its nodes
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- total of nodes</td></tr>
+<tr><td><var>T</var></td><td class="argdescr">- tree to count</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</body>
+</html>

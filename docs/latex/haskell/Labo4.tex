@@ -1,0 +1,130 @@
+\haddockmoduleheading{Labo4}
+\label{module:Labo4}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Labo4 (
+    Punto(P), pointSum,
+    Direccion(DERECHA, IZQUIERDA, ABAJO, ARRIBA), mueve, destino,
+    trayectoria, Nat(Suc, Cero), (~+), (~*), natToInt, Complejo(C),
+    Medible(medida)
+  ) where\end{verbatim}}
+\haddockendheader
+
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Punto
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{P Int Int} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Punto
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+pointSum :: (Ord a, Num a) => a -> a -> a
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Direccion
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{ARRIBA} & \\
+\haddockdecltt{|} & \haddockdecltt{ABAJO} & \\
+\haddockdecltt{|} & \haddockdecltt{IZQUIERDA} & \\
+\haddockdecltt{|} & \haddockdecltt{DERECHA} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq Direccion\\instance Ord Direccion\\instance Show Direccion
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+mueve :: Punto -> Direccion -> Punto
+\end{tabular}]
+{\haddockbegindoc
+Moves a point in a given direction\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+destino :: Punto -> {\char 91}Direccion{\char 93} -> Punto
+\end{tabular}]
+{\haddockbegindoc
+moves a point across a list of directions\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+trayectoria :: Punto -> {\char 91}Direccion{\char 93} -> {\char 91}Punto{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+Shows a list of points where a point has been moving given a direcction list\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Nat
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{Cero} & \\
+\haddockdecltt{|} & \haddockdecltt{Suc Nat} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq Nat\\instance Ord Nat\\instance Show Nat
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+({\char '176}+) :: Nat -> Nat -> Nat
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+({\char '176}*) :: Nat -> Nat -> Nat
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+natToInt :: Nat -> Int
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Complejo
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{C Float Float} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq Complejo\\instance Fractional Complejo\\instance Num Complejo\\instance Show Complejo
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+class Medible a where
+\end{tabular}]
+{\haddockbegindoc
+\haddockpremethods{}\emph{Methods}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+medida :: a -> Int
+\end{tabular}]
+\end{haddockdesc}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Medible Bool\\instance Medible a => Medible {\char 91}a{\char 93}\\instance (Medible a, Medible b) => Medible (a, b)
+\end{tabular}]
+\end{haddockdesc}

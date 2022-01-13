@@ -1,0 +1,17 @@
+#!/bin/bash
+
+find ../src/Labos/ -type f -print0 | while read -d $'\0' file; do
+    if [ "${file: -3}" == ".hs" ]
+    then
+        haskfiles+=" $file"        
+    elif [ "${file: -3}" == ".pl" ]
+    then
+        prolfiles+=" $file"
+    fi
+
+    haddock --html -o ./html/haskell $haskfiles
+    haddock --latex -o ./latex/haskell $haskfiles
+
+    swipl -s $prolfiles -g "doc_server(4000),portray_text(true),use_module(library(doc_files)),doc_save('../src/Labos', [doc_root('./html/prolog'), recursive(true)])" -t halt
+
+done
