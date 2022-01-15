@@ -1,5 +1,5 @@
 {-|
-Module      : Labo1
+Module      : Labo2
 Description : Laboratorio 2 PD FDI UCM 21-22
 License     : GPL-3.0
 Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla

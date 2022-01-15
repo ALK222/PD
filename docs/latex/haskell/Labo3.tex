@@ -4,58 +4,306 @@
 {\haddockverb\begin{verbatim}
 module Labo3 (
     last', reverse', all', min', map', filter', takeWhile',
-    listaNegPos, listaParejas', listaParejas, sufijos, sublistas,
+    listaNegPos, listaParejas, listaParejas', sufijos, sublistas,
     permuta, intercalado, sumandos, sumandos'
   ) where\end{verbatim}}
 \haddockendheader
 
+\section{Ejercicio 1}
+\subsection{A}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 last' :: {\char 91}a{\char 93} -> a
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Coge el último elemento de una lista dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> last' []
+Lista vacia
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> last [1,2,3,4]
+4
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 reverse' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Hace la lista inversa de una dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> reverse' [1,2,3,4]
+[4,3,2,1]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 all' :: (a -> Bool) -> {\char 91}a{\char 93} -> Bool
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve true si todos los elementos de la lista cumplen una condición\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> all' (<10) [1,2,3,4]
+True
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> all' (>10) [1,20,30,40]
+False
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{D}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 min' :: Ord a => {\char 91}a{\char 93} -> a
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve el menor elemento de una lista dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> min' []
+Lista vacia
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> min' [2,5,8,2,0]
+0
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{E}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 map' :: (a -> b) -> {\char 91}a{\char 93} -> {\char 91}b{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista de elementos resultantes de aplicar un filtro a otra lista de elementos\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> map' (*3) [1,2,3,4]
+[3,6,9,12]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{F}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 filter' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista de elementos con los elementos de otra lista que hayan pasado un filtro\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> filter' (>10) [1,20,30,40]
+[20,30,40]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{G}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 takeWhile' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Coge elementos de la lista dada hasta que la condición falla\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> takeWhile' (<3) [1,2,3,4,5]
+[1,2]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> takeWhile' (>3) [1,2,3,4,5]
+[]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{Ejercicio 2}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 listaNegPos :: {\char 91}Integer{\char 93}
 \end{tabular}]
-\item[\begin{tabular}{@{}l}
-listaParejas' :: (Num b, Enum b, Eq b) => b -> {\char 91}(b, b){\char 93}
-\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista alternada de elementos del 1 al 100 de forma {\char 91}1, -1{\char 93}\par}
+\end{haddockdesc}
+\section{Ejercicio 3}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 listaParejas :: Integral a => {\char 91}(a, a){\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera parejas ordenadas que cumplen x + y = z, en orden de z\par
+Ver \haddockid{listaParejas'} para ejemplos\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaParejas' :: (Num b, Enum b, Eq b) => b -> {\char 91}(b, b){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Versión acotada de \haddockid{listaParejas}\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> listaParejas' 4
+[(0,0),(0,1),(1,0),(0,2),(1,1),(2,0),(0,3),(1,2),(2,1),(3,0),(0,4),(1,3),(2,2),(3,1),(4,0)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{Ejercicio 4}
+\subsection{A}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sufijos :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera todos los sufijos de una lista\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sufijos [1,2,3,4]
+[[1,2,3,4],[2,3,4],[3,4],[4],[]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sublistas :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera todas las sublistas de una lista dada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sublistas [1,2,3]
+[[1],[2],[3],[1,2],[2,3],[1,2,3]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 permuta :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera todas las permutaciones posibles de una lista dada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> permuta [1,2,3]
+[[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 intercalado :: a -> {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve una lista de listas con el elemento dado en cada posición posible de la lista dada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> intercalado 3 [1,2]
+[[3,1,2],[1,3,2],[1,2,3]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{D}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sumandos :: Integral a => a -> {\char 91}{\char 91}a{\char 93}{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera un listado de de listas que al sumar todos sus elementos dan como resultado el numero dado\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumandos 3
+[[1,1,1],[1,2],[3]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sumandos' :: Integral a => a -> a -> a -> {\char 91}{\char 91}a{\char 93}{\char 93}
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera listados de tamaños desde x hasta n que al ser sumados dan como resultado x, siendo i el numero de listados generados\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumandos' 4 1 1
+[[1,1,1],[1,2],[3]]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumandos' 4 2 1
+[[1,1],[2]]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumandos' 4 2 2
+[[2]]
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}

@@ -1,8 +1,14 @@
 -- Los warnings de que faltan metodos son muy cansinos
 {-# OPTIONS_GHC -Wno-missing-methods #-}
 
--- ALUMNOS: ALEJANDRO BARRACHINA ARGUDO
---          CARLOS MURCIA MORILLA
+{-|
+Module      : Labo4
+Description : Laboratorio 4 PD FDI UCM 21-22
+License     : GPL-3.0
+Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla
+Stability   : experimental
+Portability : unknown
+-}
 module Labo4 where
   -- EJERCICIO 1
   data Punto = P Int Int
