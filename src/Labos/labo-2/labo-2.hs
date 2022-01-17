@@ -6,44 +6,12 @@ Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla
 Stability   : experimental
 Portability : unknown
 -}
-module Labo2 (
-  -- * Ejercicio 1
-  -- ** A
-  cuadrados,
-  -- ** B
-  cuadradoInverso,
-  -- ** C
-  rsumcos,
-  -- ** D
-  sumMenores,
-  -- ** E
-  siguientePrimo,
-  factores,
-  isPrime,
-  -- * Ejercicio 2
-  -- ** A
-  iguales,
-  -- ** B
-  menor,
-  -- ** C
-  mayorA,
-  -- ** D
-  ex,
-
-  -- * Ejercicio 3
-  -- ** A
-  filter2,
-  -- ** B
-  filters,
-  -- ** C
-  mapx
-
-)
+module Labo2
 where
 -- =====================================================
--- EJERCICIO 1
+-- * EJERCICIO 1
 -- =====================================================
--- A)
+-- ** A)
 cuadrados :: (Num b, Enum b) => b -> [b]
 {- |
 = Descripción
@@ -57,7 +25,7 @@ Coje un números y devuelve una lista con los cuadrados desde 0 hasta el número
 -}
 cuadrados n = map (\x -> x * x) [0 .. n]
 
--- B)
+-- ** B)
 cuadradoInverso :: (Num a, Enum a) => a -> [(a, a)]
 {- |
 = Descripción
@@ -71,7 +39,7 @@ Coje un números y devuelve una lista con los cuadrados desde 0 hasta el número
 -}
 cuadradoInverso n = map (\x -> (x, x * x)) [n, n -1 .. 0]
 
--- C)
+-- ** C)
 rsumcos :: (Floating a, Enum a) => a -> a
 {- |
 = Descripción
@@ -85,7 +53,7 @@ Sumatorio del coseno de 1 hasta el número dado
 -}
 rsumcos n = sum (map (\x -> x * abs (cos x)) [1 .. n])
 
--- D)
+-- ** D)
 sumMenores :: Integral a => a -> a
 {- |
 = Descripción
@@ -99,7 +67,7 @@ Sumatorio de los números menores que el dado que sean multiplos de 5 o 3
 -}
 sumMenores n = sum (filter (\x -> (mod x 3 == 0 || mod x 5 == 0)) [1 .. n])
 
--- E)
+-- ** E)
 
 siguientePrimo :: Integral a => a -> a
 {- |
@@ -148,9 +116,9 @@ True
 isPrime n = factores n == [1, n]
 
 -- =====================================================
--- EJERCICIO 2
+-- * EJERCICIO 2
 -- =====================================================
--- A)
+-- ** A)
 iguales :: Eq b => (a -> b) -> (a -> b) -> a -> a -> Bool
 {- |
 = Descripción
@@ -171,7 +139,7 @@ iguales f g n m = y
     ys = map g [n, m]
     y = all (== True) (zipWith (==) xs ys)
 
--- B)
+-- ** B)
 menor :: (Enum a, Num a) => a -> (a -> Bool) -> a
 {- |
 = Descripción
@@ -187,7 +155,7 @@ menor n p = y
   where
     y = head (filter p [n, n + 1 ..])
 
--- C)
+-- ** C)
 mayorA :: Enum a => a -> a -> (a -> Bool) -> a
 {- |
 = Descripción
@@ -203,7 +171,7 @@ mayorA n m p = y
   where
     y = last (filter p [n .. m])
 
--- D)
+-- ** D)
 ex :: Enum a => a -> a -> (a -> Bool) -> Bool
 {- |
 = Descripción
@@ -223,9 +191,9 @@ ex n m p = y
     y = length (filter p [n .. m]) > 0
 
 -- =====================================================
--- EJERCICIO 3
+-- * EJERCICIO 3
 -- =====================================================
--- A)
+-- ** A)
 filter2 :: [a] -> (a -> Bool) -> (a -> Bool) -> ([a], [a])
 {- |
 = Descripción
@@ -242,7 +210,7 @@ filter2 xs p q = (us, vs)
     us = filter p xs
     vs = filter q xs
 
--- B)
+-- ** B)
 filters :: [a] -> [a -> Bool] -> [[a]]
 {- |
 = Descripción
@@ -256,7 +224,7 @@ Devuelve una lista con las listas de numeros que cumplen unas funciones dadas en
 -}
 filters xs ys = map (\f -> filter f xs) ys
 
--- C)
+-- ** C)
 mapx :: t -> [t -> b] -> [b]
 {- |
 = Descripción

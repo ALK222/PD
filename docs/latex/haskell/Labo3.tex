@@ -4,13 +4,13 @@
 {\haddockverb\begin{verbatim}
 module Labo3 (
     last', reverse', all', min', map', filter', takeWhile',
-    listaNegPos, listaParejas, listaParejas', sufijos, sublistas,
+    listaNegPos, listaParejas', listaParejas, sufijos, sublistas,
     permuta, intercalado, sumandos, sumandos'
   ) where\end{verbatim}}
 \haddockendheader
 
-\section{Ejercicio 1}
-\subsection{A}
+\section{EJERCICIO 1}
+\subsection{A)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 last' :: {\char 91}a{\char 93} -> a
@@ -34,7 +34,7 @@ Lista vacia
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{B}
+\subsection{B)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 reverse' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
@@ -51,7 +51,7 @@ Hace la lista inversa de una dada\par
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{C}
+\subsection{C)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 all' :: (a -> Bool) -> {\char 91}a{\char 93} -> Bool
@@ -75,7 +75,7 @@ False
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{D}
+\subsection{D)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 min' :: Ord a => {\char 91}a{\char 93} -> a
@@ -99,7 +99,7 @@ Lista vacia
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{E}
+\subsection{E)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 map' :: (a -> b) -> {\char 91}a{\char 93} -> {\char 91}b{\char 93}
@@ -116,7 +116,7 @@ Genera una lista de elementos resultantes de aplicar un filtro a otra lista de e
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{F}
+\subsection{F)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 filter' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
@@ -133,7 +133,7 @@ Genera una lista de elementos con los elementos de otra lista que hayan pasado u
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{G}
+\subsection{G)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 takeWhile' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
@@ -157,7 +157,7 @@ Coge elementos de la lista dada hasta que la condición falla\par
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\section{Ejercicio 2}
+\section{EJERCICIO 2}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 listaNegPos :: {\char 91}Integer{\char 93}
@@ -166,16 +166,7 @@ listaNegPos :: {\char 91}Integer{\char 93}
 \section*{Descripción}
 Genera una lista alternada de elementos del 1 al 100 de forma {\char 91}1, -1{\char 93}\par}
 \end{haddockdesc}
-\section{Ejercicio 3}
-\begin{haddockdesc}
-\item[\begin{tabular}{@{}l}
-listaParejas :: Integral a => {\char 91}(a, a){\char 93}
-\end{tabular}]
-{\haddockbegindoc
-\section*{Descripción}
-Genera parejas ordenadas que cumplen x + y = z, en orden de z\par
-Ver \haddockid{listaParejas'} para ejemplos\par}
-\end{haddockdesc}
+\section{EJERCICIO 3}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 listaParejas' :: (Num b, Enum b, Eq b) => b -> {\char 91}(b, b){\char 93}
@@ -192,8 +183,17 @@ Versión acotada de \haddockid{listaParejas}\par
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\section{Ejercicio 4}
-\subsection{A}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaParejas :: Integral a => {\char 91}(a, a){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera parejas ordenadas que cumplen x + y = z, en orden de z\par
+Ver \haddockid{listaParejas'} para ejemplos\par}
+\end{haddockdesc}
+\section{EJERCICIO 4}
+\subsection{A)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sufijos :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
@@ -210,7 +210,7 @@ Genera todos los sufijos de una lista\par
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{B}
+\subsection{B)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sublistas :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
@@ -227,7 +227,7 @@ Genera todas las sublistas de una lista dada\par
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{C}
+\subsection{C)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 permuta :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
@@ -260,7 +260,7 @@ Devuelve una lista de listas con el elemento dado en cada posición posible de l
 \end{verbatim}}
 \end{quote}}
 \end{haddockdesc}
-\subsection{D}
+\subsection{D)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sumandos :: Integral a => a -> {\char 91}{\char 91}a{\char 93}{\char 93}

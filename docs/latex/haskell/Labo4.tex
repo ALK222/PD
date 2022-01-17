@@ -10,31 +10,63 @@ module Labo4 (
   ) where\end{verbatim}}
 \haddockendheader
 
+\section{EJERCICIO 1}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 data Punto
 \end{tabular}]
 {\haddockbegindoc
+Representación de un punto de forma (x,y)\par
 \enspace \emph{Constructors}\par
 \haddockbeginconstrs
-\haddockdecltt{=} & \haddockdecltt{P Int Int} & \\
+\haddockdecltt{=} & \haddockdecltt{P} & Constructor del punto \\
+                                        & \qquad \haddockdecltt{Int} & Coordenada X \\
+                                        & \qquad \haddockdecltt{Int} & Coordenada Y \\
 \end{tabulary}\par}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 instance Show Punto
 \end{tabular}]
+{\haddockbegindoc
+Muestra el punto como "(a,b)""\par}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 pointSum :: (Ord a, Num a) => a -> a -> a
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Suma un numero a una parte de una coordenada dada. Tiene como rango {\char 91}0 .. 100{\char 93}\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pointSum 100 10
+9
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pointSum 0 (-1)
+100
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pointSum 100 1
+0
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 data Direccion
 \end{tabular}]
 {\haddockbegindoc
+Representación de una dirección\par
 \enspace \emph{Constructors}\par
 \haddockbeginconstrs
 \haddockdecltt{=} & \haddockdecltt{ARRIBA} & \\
@@ -45,62 +77,203 @@ data Direccion
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-instance Eq Direccion\\instance Ord Direccion\\instance Show Direccion
+instance Eq Direccion
 \end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Eq\par}
 \end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Ord Direccion
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Ord\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Direccion
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Show\par}
+\end{haddockdesc}
+\subsection{A)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 mueve :: Punto -> Direccion -> Punto
 \end{tabular}]
 {\haddockbegindoc
-Moves a point in a given direction\par}
+\section*{Descripción}
+Mueve un punto en la dirección dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) IZQUIERDA
+(100,1)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) DERECHA
+(1,1)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) ARRIBA
+(0,2)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) ABAJO
+(0,0)
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
+\subsection{B)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 destino :: Punto -> {\char 91}Direccion{\char 93} -> Punto
 \end{tabular}]
 {\haddockbegindoc
-moves a point across a list of directions\par}
+\section*{Descripción}
+Mueve un punto en las direcciones dadas\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> destino (P 0 0) [ARRIBA, ARRIBA, ABAJO, ABAJO, IZQUIERDA, DERECHA, IZQUIERDA, DERECHA]
+(0,0)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> destino (P 0 0) [ARRIBA, ARRIBA, ABAJO, IZQUIERDA, IZQUIERDA, DERECHA]
+(100,1)
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
+\subsection{C)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 trayectoria :: Punto -> {\char 91}Direccion{\char 93} -> {\char 91}Punto{\char 93}
 \end{tabular}]
 {\haddockbegindoc
-Shows a list of points where a point has been moving given a direcction list\par}
+\section*{Descripción}
+Mueve un punto en las direcciones dadas mostrando los puntos por los que se han pasado\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> trayectoria (P 0 0) [ARRIBA, ARRIBA, ABAJO, ABAJO, IZQUIERDA, DERECHA, IZQUIERDA, DERECHA]
+[(0,0),(0,1),(0,2),(0,1),(0,0),(100,0),(0,0),(100,0),(0,0)]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> trayectoria (P 0 0) [ARRIBA, ARRIBA, ABAJO, IZQUIERDA, IZQUIERDA, DERECHA]
+[(0,0),(0,1),(0,2),(0,1),(100,1),(99,1),(100,1)]
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
+\section{EJERCICIO 2}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 data Nat
 \end{tabular}]
 {\haddockbegindoc
+Representación de numeros naturales según la aritmética de Peano\par
 \enspace \emph{Constructors}\par
 \haddockbeginconstrs
-\haddockdecltt{=} & \haddockdecltt{Cero} & \\
-\haddockdecltt{|} & \haddockdecltt{Suc Nat} & \\
+\haddockdecltt{=} & \haddockdecltt{Cero} & Representación del 0 \\
+\haddockdecltt{|} & \haddockdecltt{Suc Nat} & Representación de cualquier sucesor de 0 \\
 \end{tabulary}\par}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-instance Eq Nat\\instance Ord Nat\\instance Show Nat
+instance Eq Nat
 \end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Eq\par}
 \end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Ord Nat
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Ord\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Nat
+\end{tabular}]
+{\haddockbegindoc
+Muestra el punto como un número normal\par}
+\end{haddockdesc}
+\subsection{A)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 ({\char '176}+) :: Nat -> Nat -> Nat
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Suma de dos números siguiendo la aritmética de Peano\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> (Suc (Cero)) ~+ (Suc (Suc (Cero)))
+3
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 ({\char '176}*) :: Nat -> Nat -> Nat
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Multiplicación de dos números siguiendo la aritmética de Peano\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> (Suc (Cero)) ~* (Suc (Suc (Cero)))
+2
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 natToInt :: Nat -> Int
 \end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Convierte un número representado en aritmética de Peano en un \haddockid{Int} normal\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> natToInt (Suc (Suc (Cero)))
+2
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
+\subsection{C)}
+\section{EJERCICIO 3}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 data Complejo
 \end{tabular}]
 {\haddockbegindoc
+Representación de un numero complejo\par
 \enspace \emph{Constructors}\par
 \haddockbeginconstrs
 \haddockdecltt{=} & \haddockdecltt{C Float Float} & \\
@@ -108,23 +281,69 @@ data Complejo
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-instance Eq Complejo\\instance Fractional Complejo\\instance Num Complejo\\instance Show Complejo
+instance Eq Complejo
 \end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Eq\par}
 \end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Fractional Complejo
+\end{tabular}]
+{\haddockbegindoc
+Implementación especial para \haddockid{(/)}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Num Complejo
+\end{tabular}]
+{\haddockbegindoc
+Implementación especial para \haddockid{(+)} \haddockid{(-)} y \haddockid{(*)}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Complejo
+\end{tabular}]
+{\haddockbegindoc
+Representa el número como "a (+-) bi"\par}
+\end{haddockdesc}
+\section{EJERCICIO 4}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 class Medible a where
 \end{tabular}]
 {\haddockbegindoc
+Clase para medir otros tipos de datos\par
 \haddockpremethods{}\emph{Methods}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-medida :: a -> Int
+medida
 \end{tabular}]
+{\haddockbegindoc
+\haddockbeginargs
+\haddockdecltt{::} & \haddockdecltt{a} & \\
+\haddockdecltt{->} & \haddockdecltt{Int} & Coge el dato dado y saca una medida de él \\
+\end{tabulary}\par}
 \end{haddockdesc}}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-instance Medible Bool\\instance Medible a => Medible {\char 91}a{\char 93}\\instance (Medible a, Medible b) => Medible (a, b)
+instance Medible Bool
 \end{tabular}]
+{\haddockbegindoc
+Mediremos True como 0  y false como 1\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Medible a => Medible {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+Suma todas las medidas de la lista\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance (Medible a, Medible b) => Medible (a, b)
+\end{tabular}]
+{\haddockbegindoc
+Suma la medida de los dos elementos dados\par}
 \end{haddockdesc}

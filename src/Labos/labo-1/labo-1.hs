@@ -6,47 +6,13 @@ Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla
 Stability   : experimental
 Portability : unknown
 -}
-module Labo1 (
-  -- * Ejercicio 1
-  -- ** A
-  time,
-  yearsSeg,
-  daysSeg,
-  hoursSeg,
-  minsSeg,
-  years,
-  days,
-  hours,
-  mins,
-  segs,
-  sol1a,
-  -- ** B
-  sol1b,
-
-  -- * Ejercicio 2
-  -- ** A
-  sol2A,
-  -- ** B
-  sol2B,
-
-  -- * Ejercicio 3
-  sol3,
-
-  -- * Ejercicio 4
-  calculoDigitos,
-  sumaDigitos,
-  reduccion,
-
-  -- * Ejercicio 5
-  bools
-
-)
+module Labo1
 where
 
 -- =====================================================
--- EJERCICIO 1
+-- * EJERCICIO 1
 -- =====================================================
--- A)
+-- ** A)
 time :: Integer
 -- | tiempo base del ejercicio 1
 time = 10 ^ 6
@@ -91,7 +57,7 @@ sol1a :: (Integer, Integer, Integer, Integer, Integer)
 -- | Tupla con el tiempo total de 'time' en años, dias, horas, minutos y segundos
 sol1a = (years, days, hours, mins, segs)
 
--- B)
+-- ** B)
 
 sol1b :: Integer -> (Integer, Integer, Integer, Integer, Integer)
 {- |
@@ -113,9 +79,9 @@ sol1b x =
   in (years, days, hours, mins, segs)
 
 -- =====================================================
--- EJERCICIO 2
+-- * EJERCICIO 2
 -- =====================================================
--- A)
+-- ** A)
 sol2A :: Integer -> Bool
 {- |
 = Descripción
@@ -132,7 +98,7 @@ False
 sol2A year =
   if ((mod year 4 == 0) && (mod year 100 /= 0)) || (mod year 400 == 0) then True else False
 
--- B)
+-- ** B)
 sol2B :: Integer -> Bool
 {- |
 = Descripción
@@ -152,7 +118,7 @@ sol2B year
   | otherwise = False
 
 -- =====================================================
--- EJERCICIO 3
+-- * EJERCICIO 3
 -- =====================================================
 
 {- |
@@ -167,7 +133,7 @@ sol3 xs =
   in fromIntegral s / fromIntegral l
 
 -- =====================================================
--- EJERCICIO 4
+-- * EJERCICIO 4
 -- =====================================================
 calculoDigitos :: Integer -> Integer
 {- |
@@ -221,7 +187,7 @@ reduccion x
   | otherwise = let y = sumaDigitos x in if y < 10 then y else reduccion y
 
 -- =====================================================
--- EJERCICIO 5
+-- * EJERCICIO 5
 -- =====================================================
 
 bools :: Bool -> Bool -> Bool
