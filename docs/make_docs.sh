@@ -14,6 +14,6 @@ while read -d $'\0' file
         fi
     fi
 done < <(find ../src/Labos/ -type f -print0)
-haddock -html -o ./html/haskell $haskfiles  -w 
-haddock --latex -o ./latex/haskell $haskfiles -w 
+haddock -h --title="Prácticas Haskell" -o ./html/haskell $haskfiles -w 
+haddock --latex -o ./latex/haskell $haskfiles -w --title="Prácticas Haskell"
 swipl -g "doc_server(4000),portray_text(true),use_module(library(doc_files)),doc_save('../src/Labos', [doc_root('./html/prolog'), recursive(true)])" -t halt -s $prolfiles 

@@ -16,9 +16,9 @@
 
 %! mas_por_encima_que(+List:list, +List:list) is nondet.
 %
-% True if X has more elements above itsefl than Y.
+% True si el elemento X tiene más elementos por encima que el elemento Y.
 %
-% X and Y can be from different stacks.
+% X e Y pueden ser de distintas pilas.
 %
 % Ejemplo:
 % ==
@@ -29,8 +29,8 @@
 % ==
 %
 %
-% @arg X element to be compared
-% @arg Y element used as comparator
+% @arg X elemento a comparar
+% @arg Y elemento comparador
 mas_por_encima_que(_, []).
 mas_por_encima_que(X,Y) :- 
     por_arriba_ls(X,Xs), 
@@ -45,9 +45,9 @@ mas_por_encima_que(X,Y) :-
 %! mezcla(+List:list, +List:list, -List:list) is det.
 %! mezcla(+List:list, +List:list, +List:list) is nondet.
 %
-% Takes two lists and makes a new list with all the elements of both lists in order.
+% Coge dos lisras y hace una mezcla ordenada de ambas
 %
-% X and Y can be lists from different types.
+% X e Y pueden ser de tipos distintos.
 %
 % Ejemplo:
 % ==
@@ -58,9 +58,9 @@ mas_por_encima_que(X,Y) :-
 % ==
 %
 %
-% @arg X First list to be used
-% @arg Y Second list to be used
-% @arg Z Shorted list with elements from the two other lists
+% @arg X Primera lista
+% @arg Y Segunda lista
+% @arg Z Lista final
 mezcla([],Y,Y).
 mezcla(X,[],X).
 mezcla([X|Xs],[Y|Ys],[X|Z]):- X @< Y, mezcla(Xs,[Y|Ys],Z).
@@ -73,7 +73,7 @@ mezcla([X|Xs],[Y|Ys],[Y|Z]):- mezcla([X|Xs],Ys,Z).
 %! my_reverse(+List:list, -List:list) is det.
 %! my_reverse(+List:list, +List:list) is nondet.
 %
-% Takes a list and creates its reverse.
+% Coge una lista y la invierte
 %
 % Ejemplo:
 % ==
@@ -84,15 +84,15 @@ mezcla([X|Xs],[Y|Ys],[Y|Z]):- mezcla([X|Xs],Ys,Z).
 % ==
 %
 %
-% @arg X List to be used
-% @arg Y Reversed list
+% @arg X Lista dada
+% @arg Y Lista invertida
 my_reverse(Xs,Ys) :- my_reverse(Xs,[],Ys).
 
 %! my_reverse(+List:list, -List:list, -List:list) is det.
 %! my_reverse(+List:list, +List:list, -List:list) is det.
 %! my_reverse(+List:list, +List:list, +List:list) is nondet.
 %
-% Auxiliary predicate for my_reverse/2
+% Predicado auxiliar para my_reverse/2
 %
 % Ejemplo:
 % ==
@@ -105,9 +105,9 @@ my_reverse(Xs,Ys) :- my_reverse(Xs,[],Ys).
 % ==
 %
 %
-% @arg X List to be used
-% @arg Y Auxiliary list
-% @arg Z Reversed list
+% @arg X Lista dada
+% @arg Y Lista auxiliar
+% @arg Z Lista invertida
 % @see my_reverse/2
 my_reverse([],Y,Y).
 my_reverse([X|Xs],Reverse,Aux) :- my_reverse(Xs,[X|Reverse],Aux).
@@ -115,9 +115,9 @@ my_reverse([X|Xs],Reverse,Aux) :- my_reverse(Xs,[X|Reverse],Aux).
 %! simetricas(+List:list, -List:list) is det.
 %! simetricas(+List:list, +List:list) is nondet.
 %
-% Takes a list of lists and returns a list with only the symmetric lists.
+% Coge una lista de listas y devuelve una lista solo con aquellas que sean simetricas.
 %
-% All lists in X can be of different types
+% Las listas dentro de X pueden ser de distintos tipoa
 %
 % Ejemplo:
 % ==
@@ -130,8 +130,8 @@ my_reverse([X|Xs],Reverse,Aux) :- my_reverse(Xs,[X|Reverse],Aux).
 % ==
 %
 %
-% @arg X List to be used
-% @arg Yss List of symmetric lists
+% @arg X Lista dada
+% @arg Yss Lista de listas simétricas
 simetricas([],[]).
 simetricas([Xs|Xss], [Xs |Yss]):- my_reverse(Xs,Xs), simetricas(Xss, Yss).
 simetricas([_|Xss], Yss):- simetricas(Xss,Yss).
@@ -143,10 +143,10 @@ simetricas([_|Xss], Yss):- simetricas(Xss,Yss).
 
 %! numnodos(+Int:int, +Arbol:arbol) is det.
 %
-% Takes a tree a counts its nodes
+% Coge un arbol y devuelve su número de nodos
 %
-% @arg X total of nodes
-% @arg T tree to count
+% @arg X Numero de nodos
+% @arg T Árbol a contar
 numnodos(0, void).
 numnodos(X, arbol(_,I,D)):- 
     numnodos(I,Z1), 

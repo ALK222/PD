@@ -13,10 +13,10 @@
 <h1 class="file"><span style="float:right"></span>labo-6.pl</h1>
 
 <dl>
-<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="mas_por_encima_que/2"><b class="pred">mas_por_encima_que</b><var class="arglist">(+List:list, +List:list)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True if X has more elements above itsefl than Y.
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="mas_por_encima_que/2"><b class="pred">mas_por_encima_que</b><var class="arglist">(+List:list, +List:list)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True si el elemento X tiene más elementos por encima que el elemento Y.
 
 <p>
-X and Y can be from different stacks.</p>
+X e Y pueden ser de distintas pilas.</p>
 
 <p>
 Ejemplo:</p>
@@ -31,8 +31,8 @@ true.</pre>
 <dt class="tag">Arguments:</dt><dd>
 
 <table class="arglist">
-<tr><td><var>X</var></td><td class="argdescr">- element to be compared</td></tr>
-<tr><td><var>Y</var></td><td class="argdescr">- element used as comparator</td></tr>
+<tr><td><var>X</var></td><td class="argdescr">- elemento a comparar</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- elemento comparador</td></tr>
 </table>
 
 </dd>
@@ -40,10 +40,10 @@ true.</pre>
 
 </dd>
 <dt class="pubdef"><span style="float:right">&nbsp;</span><a name="mezcla/3"><b class="pred">mezcla</b><var class="arglist">(+List:list, +List:list, -List:list)</var></a> is <b class="det">det</b></dt>
-<dt class="pubdef"><b class="pred">mezcla</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Takes two lists and makes a new list with all the elements of both lists in order.
+<dt class="pubdef"><b class="pred">mezcla</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge dos lisras y hace una mezcla ordenada de ambas
 
 <p>
-X and Y can be lists from different types.</p>
+X e Y pueden ser de tipos distintos.</p>
 
 <p>
 Ejemplo:</p>
@@ -58,9 +58,9 @@ false.</pre>
 <dt class="tag">Arguments:</dt><dd>
 
 <table class="arglist">
-<tr><td><var>X</var></td><td class="argdescr">- First list to be used</td></tr>
-<tr><td><var>Y</var></td><td class="argdescr">- Second list to be used</td></tr>
-<tr><td><var>Z</var></td><td class="argdescr">- Shorted list with elements from the two other lists</td></tr>
+<tr><td><var>X</var></td><td class="argdescr">- Primera lista</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- Segunda lista</td></tr>
+<tr><td><var>Z</var></td><td class="argdescr">- Lista final</td></tr>
 </table>
 
 </dd>
@@ -68,7 +68,7 @@ false.</pre>
 
 </dd>
 <dt class="pubdef"><span style="float:right">&nbsp;</span><a name="my_reverse/2"><b class="pred">my_reverse</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
-<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Takes a list and creates its reverse.
+<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge una lista y la invierte
 
 <p>
 Ejemplo:</p>
@@ -83,8 +83,8 @@ false.</pre>
 <dt class="tag">Arguments:</dt><dd>
 
 <table class="arglist">
-<tr><td><var>X</var></td><td class="argdescr">- <var>List</var> to be used</td></tr>
-<tr><td><var>Y</var></td><td class="argdescr">- Reversed list</td></tr>
+<tr><td><var>X</var></td><td class="argdescr">- Lista dada</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- Lista invertida</td></tr>
 </table>
 
 </dd>
@@ -93,7 +93,7 @@ false.</pre>
 </dd>
 <dt class="pubdef"><span style="float:right">&nbsp;</span><a name="my_reverse/3"><b class="pred">my_reverse</b><var class="arglist">(+List:list, -List:list, -List:list)</var></a> is <b class="det">det</b></dt>
 <dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list, -List:list)</var> is <b class="det">det</b></dt>
-<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Auxiliary predicate for <a href="labo-6.html#my_reverse/2">my_reverse/2</a>
+<dt class="pubdef"><b class="pred">my_reverse</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Predicado auxiliar para <a href="labo-6.html#my_reverse/2">my_reverse/2</a>
 
 <p>
 Ejemplo:</p>
@@ -110,9 +110,9 @@ false.</pre>
 <dt class="tag">Arguments:</dt><dd>
 
 <table class="arglist">
-<tr><td><var>X</var></td><td class="argdescr">- <var>List</var> to be used</td></tr>
-<tr><td><var>Y</var></td><td class="argdescr">- Auxiliary list</td></tr>
-<tr><td><var>Z</var></td><td class="argdescr">- Reversed list</td></tr>
+<tr><td><var>X</var></td><td class="argdescr">- Lista dada</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- Lista auxiliar</td></tr>
+<tr><td><var>Z</var></td><td class="argdescr">- Lista invertida</td></tr>
 </table>
 
 </dd>
@@ -121,10 +121,10 @@ false.</pre>
 
 </dd>
 <dt class="pubdef"><span style="float:right">&nbsp;</span><a name="simetricas/2"><b class="pred">simetricas</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
-<dt class="pubdef"><b class="pred">simetricas</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Takes a list of lists and returns a list with only the symmetric lists.
+<dt class="pubdef"><b class="pred">simetricas</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge una lista de listas y devuelve una lista solo con aquellas que sean simetricas.
 
 <p>
-All lists in X can be of different types</p>
+Las listas dentro de X pueden ser de distintos tipoa</p>
 
 <p>
 Ejemplo:</p>
@@ -141,22 +141,22 @@ false.</pre>
 <dt class="tag">Arguments:</dt><dd>
 
 <table class="arglist">
-<tr><td><var>X</var></td><td class="argdescr">- <var>List</var> to be used</td></tr>
-<tr><td><var>Yss</var></td><td class="argdescr">- <var>List</var> of symmetric lists</td></tr>
+<tr><td><var>X</var></td><td class="argdescr">- Lista dada</td></tr>
+<tr><td><var>Yss</var></td><td class="argdescr">- Lista de listas simétricas</td></tr>
 </table>
 
 </dd>
 </dl>
 
 </dd>
-<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="numnodos/2"><b class="pred">numnodos</b><var class="arglist">(+Int:int, +Arbol:arbol)</var></a> is <b class="det">det</b></dt><dd class="defbody">Takes a tree a counts its nodes
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="numnodos/2"><b class="pred">numnodos</b><var class="arglist">(+Int:int, +Arbol:arbol)</var></a> is <b class="det">det</b></dt><dd class="defbody">Coge un arbol y devuelve su número de nodos
 
 <dl class="tags">
 <dt class="tag">Arguments:</dt><dd>
 
 <table class="arglist">
-<tr><td><var>X</var></td><td class="argdescr">- total of nodes</td></tr>
-<tr><td><var>T</var></td><td class="argdescr">- tree to count</td></tr>
+<tr><td><var>X</var></td><td class="argdescr">- Numero de nodos</td></tr>
+<tr><td><var>T</var></td><td class="argdescr">- Árbol a contar</td></tr>
 </table>
 
 </dd>

@@ -11,7 +11,9 @@ Portability : unknown
 -}
 module Labo4
 where
+-- =====================================================
 -- * EJERCICIO 1
+-- =====================================================
 
 {-|
 Representación de un punto de forma (x,y)
@@ -116,7 +118,9 @@ Mueve un punto en las direcciones dadas mostrando los puntos por los que se han 
 -}
 trayectoria p = foldl (\dir m -> dir ++ [mueve (last dir) m]) [p]
 
+-- =====================================================
 -- * EJERCICIO 2
+-- =====================================================
 
 -- | Representación de numeros naturales según la aritmética de Peano
 data Nat =
@@ -180,7 +184,9 @@ natToInt (Suc n) = 1 + natToInt n
 -- | Muestra el punto como un número normal
 instance Show Nat where show a = show (natToInt a)
 
+-- =====================================================
 -- * EJERCICIO 3
+-- =====================================================
 
 -- | Representación de un numero complejo
 data Complejo = C Float Float deriving (Eq -- ^ Derivación estandar de Eq
@@ -199,7 +205,9 @@ instance Num Complejo where
 instance Fractional Complejo where
   x / y = case (x, y) of (C a b, C c d) -> C (((a * c) + (b * d)) / ((c * c) + (d * d))) (((b * c) - (a * d)) / ((c * c) + (d * d)))
 
+-- =====================================================
 -- * EJERCICIO 4
+-- =====================================================
 
 -- | Clase para medir otros tipos de datos
 class Medible a where

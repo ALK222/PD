@@ -12,15 +12,145 @@
 
 <h1 class="file"><span style="float:right"></span>labo-7.pl</h1>
 
-<h2 class="undoc">Undocumented predicates</h2>
+<dl>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="maximo/2"><b class="pred">maximo</b><var class="arglist">(-Arbol:arbol, -Int:int)</var></a> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">maximo</b><var class="arglist">(-Arbol:arbol, +Int:int)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">maximo</b><var class="arglist">(+Arbol:arbol, +Int:int)</var> is <b class="det">det</b></dt><dd class="defbody">Saca el elemento máximo encontrado en un arbol binario.
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- es el elemento máximo</td></tr>
+<tr><td><var>arbol</var></td><td class="argdescr">- es el árbol en el que buscamos el máximo</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="sublista/2"><b class="pred">sublista</b><var class="arglist">(-List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sublista</b><var class="arglist">(-List:list, +List:list)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sublista</b><var class="arglist">(+List:list, -List:list)</var> is <b class="det">det</b></dt><dd class="defbody">Coge una lista y genera una de sus sublistas posibles.
 
 <p>
-The following predicates are exported, but not or incorrectly documented.</p>
+Ejemplo:</p>
 
-<dl class="undoc">
-<dt class="undoc"><span style="float:right">&nbsp;</span><a name="sublistas/2"><b class="pred">sublistas</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
-<dt class="undoc"><span style="float:right">&nbsp;</span><a name="sublista/2"><b class="pred">sublista</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
-<dt class="undoc"><span style="float:right">&nbsp;</span><a name="maximo/2"><b class="pred">maximo</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
+<pre class="code" ext="">
+?- sublista([1,2], X).
+X=[].</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- elemento común en ambas listas</td></tr>
+<tr><td><var>Xs</var></td><td class="argdescr">- Lista final</td></tr>
+<tr><td><var>Xss</var></td><td class="argdescr">- Lista a dividir en sublistas</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="sublistas/2"><b class="pred">sublistas</b><var class="arglist">(-List:list, -List:list)</var></a> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">sublistas</b><var class="arglist">(-List:list, +List:list)</var> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">sublistas</b><var class="arglist">(+List:list, -List:list)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sublistas</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge una lista y genera todas sus sublistas posibles.
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- sublistas(Xss, [1,[a]]).
+Xss = [[], [1], [1, [a]], [[a]]].</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>LSX</var></td><td class="argdescr">- Sublistas totales</td></tr>
+<tr><td><var>Xs</var></td><td class="argdescr">- Lista a dividir en sublistas</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="aplana1/2"><b class="pred">aplana1</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">aplana1</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Aplana una lista de listas en una lista simple.
+Utiliza <a href="labo-7.html#aplana1/3">aplana1/3</a> como función auxiliar.
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- aplana1([1,[a],2,[1,2]], R).
+R = [1, a, 2, 1, 2].</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>L</var></td><td class="argdescr">- lista de listas</td></tr>
+<tr><td><var>R</var></td><td class="argdescr">- lista aplanada</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="aplana1/3"><b class="pred">aplana1</b><var class="arglist">(+List:list, -List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">aplana1</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Aplana una lista de listas en una lista simple.</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="aplana/2"><b class="pred">aplana</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">aplana</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Aplana una lista de listas en una lista simple.
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- aplana([1,[a],2,[1,2]], R).
+R = [1, a, 2, 1, 2].</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>H</var></td><td class="argdescr">- cabeza de la lista de listas</td></tr>
+<tr><td><var>Xss</var></td><td class="argdescr">- lista de listas</td></tr>
+<tr><td><var>Xs</var></td><td class="argdescr">- lista aplanada</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="hanoi/5"><b class="pred">hanoi</b><var class="arglist">(-Int:int, -String:string, -String:string, -String:string, -List:list)</var></a> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">hanoi</b><var class="arglist">(+Int:int, +String:string, +String:string, +String:string, -List:list)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">hanoi</b><var class="arglist">(+Int:int, +String:string, +String:string, +String:string, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Devuelve una lista de movimientos para resolver el juego de las torres de Hanoi.
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- hanoi(2, A,B,C, L).
+L = [(A, C),  (A, B),  (C, B)]</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>N</var></td><td class="argdescr">- número de piezas</td></tr>
+<tr><td><var>A</var></td><td class="argdescr">- nombre de la torre inicial</td></tr>
+<tr><td><var>B</var></td><td class="argdescr">- nombre de la torre intermedia</td></tr>
+<tr><td><var>C</var></td><td class="argdescr">- nombre de la torre final</td></tr>
+<tr><td><var>L</var></td><td class="argdescr">- lista de movimientos</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
 </dl>
 
 </body>
