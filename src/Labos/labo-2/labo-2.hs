@@ -51,7 +51,7 @@ Sumatorio del coseno de 1 hasta el número dado
 >>> rsumcos 90
 2592.852064773843
 -}
-rsumcos n = sum (map (\x -> x * abs (cos x)) [1 .. n])
+rsumcos n = sum $ map (\x -> x * abs (cos x)) [1 .. n]
 
 -- ** D)
 sumMenores :: Integral a => a -> a
@@ -65,7 +65,7 @@ Sumatorio de los números menores que el dado que sean multiplos de 5 o 3
 >>> sumMenores 10
 33
 -}
-sumMenores n = sum (filter (\x -> (mod x 3 == 0 || mod x 5 == 0)) [1 .. n])
+sumMenores n = sum $ filter (\x -> (mod x 3 == 0 || mod x 5 == 0)) [1 .. n]
 
 -- ** E)
 
@@ -82,7 +82,7 @@ Usa 'isPrime'
 >>> siguientePrimo 10
 11
 -}
-siguientePrimo n = head (filter (\x -> isPrime x) [n + 1 ..])
+siguientePrimo n = head $ filter (\x -> isPrime x) [n + 1 ..]
 
 factores :: Integral a => a -> [a]
 {- |
