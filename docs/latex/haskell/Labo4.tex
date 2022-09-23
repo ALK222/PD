@@ -77,6 +77,13 @@ Representación de una dirección\par
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
+instance Show Direccion
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Show\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
 instance Eq Direccion
 \end{tabular}]
 {\haddockbegindoc
@@ -88,13 +95,6 @@ instance Ord Direccion
 \end{tabular}]
 {\haddockbegindoc
 Derivación estandar de Ord\par}
-\end{haddockdesc}
-\begin{haddockdesc}
-\item[\begin{tabular}{@{}l}
-instance Show Direccion
-\end{tabular}]
-{\haddockbegindoc
-Derivación estandar de Show\par}
 \end{haddockdesc}
 \subsection{A)}
 \begin{haddockdesc}
@@ -197,6 +197,13 @@ Representación de numeros naturales según la aritmética de Peano\par
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
+instance Show Nat
+\end{tabular}]
+{\haddockbegindoc
+Muestra el punto como un número normal\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
 instance Eq Nat
 \end{tabular}]
 {\haddockbegindoc
@@ -208,13 +215,6 @@ instance Ord Nat
 \end{tabular}]
 {\haddockbegindoc
 Derivación estandar de Ord\par}
-\end{haddockdesc}
-\begin{haddockdesc}
-\item[\begin{tabular}{@{}l}
-instance Show Nat
-\end{tabular}]
-{\haddockbegindoc
-Muestra el punto como un número normal\par}
 \end{haddockdesc}
 \subsection{A)}
 \begin{haddockdesc}
@@ -281,10 +281,10 @@ Representación de un numero complejo\par
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-instance Eq Complejo
+instance Num Complejo
 \end{tabular}]
 {\haddockbegindoc
-Derivación estandar de Eq\par}
+Implementación especial para \haddockid{(+)} \haddockid{(-)} y \haddockid{(*)}\par}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
@@ -295,17 +295,17 @@ Implementación especial para \haddockid{(/)}\par}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-instance Num Complejo
-\end{tabular}]
-{\haddockbegindoc
-Implementación especial para \haddockid{(+)} \haddockid{(-)} y \haddockid{(*)}\par}
-\end{haddockdesc}
-\begin{haddockdesc}
-\item[\begin{tabular}{@{}l}
 instance Show Complejo
 \end{tabular}]
 {\haddockbegindoc
 Representa el número como "a (+-) bi"\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq Complejo
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Eq\par}
 \end{haddockdesc}
 \section{EJERCICIO 4}
 \begin{haddockdesc}

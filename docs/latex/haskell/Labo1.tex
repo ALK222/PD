@@ -157,11 +157,20 @@ False
 \section{EJERCICIO 3}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-sol3 :: (Fractional a1, Integral a2, Foldable t) => t a2 -> a1
+sol3 :: (Fractional a, Integral a, Foldable t) => t a -> a
 \end{tabular}]
 {\haddockbegindoc
 \section*{Descripción}
-Error de tipado ya que la division / no trabaja con Integer\par}
+Error de tipado ya que la division / no trabaja con Integer\par
+\section*{Descripción}
+Calcula la media de un listado de numeros dado\par
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sol3 [1,2,3,4]
+2.5
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \section{EJERCICIO 4}
 \begin{haddockdesc}

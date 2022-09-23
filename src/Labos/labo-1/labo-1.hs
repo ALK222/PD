@@ -72,11 +72,14 @@ Coje el tiempo dado y lo convierte a (Años, Días, Horas, Minutos, Segundos)
 -}
 sol1b x =
   let years = div x yearsSeg
-      days = div (x - (years * yearsSeg)) daysSeg
-      hours = div (x - (years * yearsSeg) - (days * daysSeg)) hoursSeg
-      mins = div (x - (years * yearsSeg) - (days * daysSeg) - (hours * hoursSeg)) minsSeg
-      segs = (x - (years * yearsSeg) - (days * daysSeg) - (hours * hoursSeg) - (mins * minsSeg))
-  in (years, days, hours, mins, segs)
+      a = mod x yearsSeg
+  in
+      let days = div a daysSeg
+          b = mod a daysSeg
+      in
+        let hours = div b hoursSeg
+            c = mod b hoursSeg
+  in (years, days, hours, div c minsSeg, mod c minsSeg)
 
 -- =====================================================
 -- * EJERCICIO 2
@@ -125,6 +128,15 @@ sol2B year
 = Descripción
 
 Error de tipado ya que la division / no trabaja con Integer
+
+-}
+{-|
+= Descripción
+
+Calcula la media de un listado de numeros dado
+
+>>> sol3 [1,2,3,4]
+2.5
 
 -}
 sol3 xs =
@@ -183,6 +195,7 @@ Suma todos los digitos de un numero dado hasta que el total es menor que 10
 4
 -}
 reduccion x
+  | x < 0 = reduccion (-x)
   | x < 10 = x
   | otherwise = let y = sumaDigitos x in if y < 10 then y else reduccion y
 
@@ -192,6 +205,6 @@ reduccion x
 
 bools :: Bool -> Bool -> Bool
 -- | Disyunción booleana definida por ajuste de patrones
-bools x False = False
-bools False x = False
-bools True x  = x
+bools x False = x
+bools False x = x
+bools x y     = x || y
