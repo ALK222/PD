@@ -1,8 +1,8 @@
 {-|
 Module      : Labo5
-Description : Laboratorio 5 PD FDI UCM 21-22
+Description : Laboratorio 5 PD FDI UCM 22-23
 License     : GPL-3.0
-Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla
+Maintainer  : Alejandro Barrachina Argudo
 Stability   : experimental
 Portability : unknown
 -}

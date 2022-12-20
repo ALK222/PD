@@ -6,7 +6,7 @@ Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla
 Stability   : experimental
 Portability : unknown
 -}
-module Labo3
+module Labo3_2022
 where
 -- =====================================================
 -- * EJERCICIO 1

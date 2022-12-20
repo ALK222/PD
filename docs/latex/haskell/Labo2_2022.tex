@@ -1,0 +1,328 @@
+\haddockmoduleheading{Labo2_2022}
+\label{module:Labo2_2022}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Labo2_2022 (
+    listaPares, listaParesCuadrados, listaPotencias, sumaMenores,
+    primerPrimoMayor, isPrime, iguales, menorA, menor, mayorA, pt,
+    filter2, partition, mapx, filter1, filters
+  ) where\end{verbatim}}
+\haddockendheader
+
+\section{EJERCICIO 1}
+\subsection{A)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaPares :: Integral a => a -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista de números pares hasta el número dado.\par
+\subsection*{Ejemplo:}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> listaPares 9
+[0,2,4,6,8]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaParesCuadrados :: Integral a => a -> {\char 91}(a, a){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Coje un números y devuelve una lista con los cuadrados desde 0 hasta el número en orden inverso y emparejado con su número inicial\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> listaParesCuadrados 3
+[(3,9),(2,4),(1,1),(0,0)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaPotencias :: Integral a => Int -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista con las potencias de 3 desde 0 hasta el numero dado\par
+\subsection*{Ejemplo:}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> listaPotencias 3
+[1,3,9]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{D)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+sumaMenores :: Int -> Int
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Sumatorio de los números menores que el dado que sean multiplos de 5 o 3\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumaMenores 10
+33
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{E)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+primerPrimoMayor :: Integral a => a -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+calcula el siguiente número primo a uno dado.\par
+Usa \haddockid{isPrime}\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> primerPrimoMayor 10
+11
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+isPrime :: Integral a => a -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Comprueba si un número es primo\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> isPrime 10
+False
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> isPrime 5
+True
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 2}
+\subsection{A)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+iguales :: Eq b => (a -> b) -> (a -> b) -> a -> a -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Comprueba si dos funciones son iguales para un ranfo dado de valores\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> iguales primerPrimoMayor sumaMenores 0 10
+False
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> iguales sumaMenores sumaMenores 0 10
+True
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+menorA :: Integral a => a -> a -> (a -> Bool) -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve el menor numero mayor que n que compla una función dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> menorA 22 128 isPrime
+23
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> menorA 14 16 isPrime
+Prelude.head: empty list
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+menor :: (Num p, Enum p) => p -> (p -> Bool) -> p
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve el menor numero mayor que n que compla una función dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> menor 2077 isPrime
+2081
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{D)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+mayorA :: Enum p => p -> p -> (p -> Bool) -> p
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Mayor número en un intervalo dado que cumple una función dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mayorA 10 20 isPrime
+19
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mayorA 14 16 isPrime
+Prelude.last: empty list
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{E)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+pt :: Enum p => p -> p -> (p -> Bool) -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Comprueba si todos los elementos de un intervalo verifican una función\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pt 14 16 isPrime
+False
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pt 2 3 isPrime
+True
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 3}
+\subsection{A)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+filter2 :: {\char 91}a{\char 93} -> (a -> b) -> (a -> b) -> {\char 91}{\char 91}b{\char 93}{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve dos listas con los elementos de una lista dada que cumplen dos funciones\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> filter2 [1..10] odd even
+([1,3,5,7,9],[2,4,6,8,10])
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+partition :: (a -> Bool) -> {\char 91}a{\char 93} -> ({\char 91}a{\char 93}, {\char 91}a{\char 93})
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Parte una lista dada entre elementos que verifican una función y otros que no\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> partition isPrime [0..20]
+([2,3,5,7,11,13,17,19],[0,1,4,6,8,9,10,12,14,15,16,18,20])
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+mapx :: t -> {\char 91}t -> b{\char 93} -> {\char 91}b{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve una lista de valores resultado de aplicar a un valor un listado de funciones. Todos los tipos de las funciones de la lista deben ser iguales\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mapx 10 [even, odd]
+[True,False]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mapx 10 [primerPrimoMayor, sumaMenores]
+[11,33]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{D)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+filter1 :: {\char 91}{\char 91}a{\char 93}{\char 93} -> (a -> Bool) -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Devuelve una lista con listas de valores que cumplen la propiedad dada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> filter1 [[1], [1,2,3,4], [2077,2467, 2277]] isPrime
+[[],[2,3],[2467]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{E)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+filters :: {\char 91}a{\char 93} -> {\char 91}a -> Bool{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve una lista con las listas de numeros que cumplen unas funciones dadas en formato de lista\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> filters [1..10] [odd, even, isPrime]
+[[1,3,5,7,9],[2,4,6,8,10],[2,3,5,7]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}

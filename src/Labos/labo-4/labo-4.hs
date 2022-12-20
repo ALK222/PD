@@ -1,9 +1,9 @@
--- Los warnings de que faltan metodos son muy cansinos
+-- -- Los warnings de que faltan metodos son muy cansinos
 {-# OPTIONS_GHC -Wno-missing-methods #-}
 
 {-|
 Module      : Labo4
-Description : Laboratorio 4 PD FDI UCM 21-22
+Description : Laboratorio 4 PD FDI UCM 22-23
 License     : GPL-3.0
 Maintainer  : Alejandro Barrachina Argudo y Carlos Murcia Morilla
 Stability   : experimental

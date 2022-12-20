@@ -1,0 +1,302 @@
+\haddockmoduleheading{Labo3_2022}
+\label{module:Labo3_2022}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Labo3_2022 (
+    last', reverse', any', min', map', takeWhile', listaNegPos,
+    listaRepetidos, listaParejas, permuta, intercalado, cuestaPos,
+    actualizarCabecera, meterCuesta, esCuesta
+  ) where\end{verbatim}}
+\haddockendheader
+
+\section{EJERCICIO 1}
+\subsection{A)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+last' :: {\char 91}a{\char 93} -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Coge el último elemento de una lista dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> last' []
+Lista vacia
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> last [1,2,3,4]
+4
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+reverse' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Hace la lista inversa de una dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> reverse' [1,2,3,4]
+[4,3,2,1]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+any' :: (a -> Bool) -> {\char 91}a{\char 93} -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve true si todos los elementos de la lista cumplen una condición\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> any' (<10) [1,2,3,4]
+True
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> any' (<10) [10, 20, 30, 5]
+True
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> any' (>10) [1,2, 3, 4]
+False
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{D)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+min' :: Ord a => {\char 91}a{\char 93} -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve el menor elemento de una lista dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> min' []
+Lista vacia
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> min' [2,5,8,2,0]
+0
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{E)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+map' :: (a -> b) -> {\char 91}a{\char 93} -> {\char 91}b{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista de elementos resultantes de aplicar un filtro a otra lista de elementos\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> map' (*3) [1,2,3,4]
+[3,6,9,12]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{F)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+takeWhile' :: (a -> Bool) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Coge elementos de la lista dada hasta que la condición falla\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> takeWhile' (<3) [1,2,3,4,5]
+[1,2]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> takeWhile' (>3) [1,2,3,4,5]
+[]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 2}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaNegPos :: {\char 91}Integer{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista alternada de elementos del 1 al 100 de forma {\char 91}1, -2,..{\char 93}\par
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> listaNegPos
+[1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,-14,15,-16,17,-18,19,-20,21,-22,23,-24,25,-26,27,-28,29,-30,31,-32,33,-34,35,-36,37,-38,39,-40,41,-42,43,-44,45,-46,47,-48,49,-50,51,-52,53,-54,55,-56,57,-58,59,-60,61,-62,63,-64,65,-66,67,-68,69,-70,71,-72,73,-74,75,-76,77,-78,79,-80,81,-82,83,-84,85,-86,87,-88,89,-90,91,-92,93,-94,95,-96,97,-98,99,-100]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 3}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaRepetidos :: {\char 91}{\char 91}Int{\char 93}{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera una lista de listas cuyo contenido sera el numero x repetido x veces\par
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> take 5 (listaRepetidos)
+[[],[1],[2,2],[3,3,3],[4,4,4,4]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 4}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaParejas :: Integral a => {\char 91}(a, a){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera parejas ordenadas que cumplen x + y = z, en orden de z\par
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> take 10 (listaParejas)
+[(0,0),(0,1),(1,0),(0,2),(1,1),(2,0),(0,3),(1,2),(2,1),(3,0)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 5}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+permuta :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Genera todas las permutaciones posibles de una lista dada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> permuta [1,2,3]
+[[1,2,3],[2,1,3],[2,3,1],[1,3,2],[3,1,2],[3,2,1]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+intercalado :: a -> {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve una lista de listas con el elemento dado en cada posición posible de la lista dada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> intercalado 3 [1,2]
+[[3,1,2],[1,3,2],[1,2,3]]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 6}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+cuestaPos :: Ord a => {\char 91}a{\char 93} -> {\char 91}(a, Int){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve una lista con los elementos considerados cuestas y su posicion\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> cuestaPos [-3,-2,1,0,-1,1]
+[(-2,1),(1,2),(1,5)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+actualizarCabecera :: {\char 91}(a, Int){\char 93} -> a -> {\char 91}(a, Int){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Devuelve una lista con la cabecera actualizada\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> actualizarCabecera [(3,0)] 2
+[(2,1)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+meterCuesta :: {\char 91}(a, Int){\char 93} -> a -> {\char 91}(a, Int){\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Añade una cuesta al listado y actualiza la cabecera\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> meterCuesta [(3,0)] 2
+[(2,1),(2,1)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+esCuesta :: Ord a => a -> a -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+comprueba si un elemento es cuesta\par
+\subsection*{Ejemplo}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> esCuesta 1 0
+False
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> esCuesta 2 5
+True
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}

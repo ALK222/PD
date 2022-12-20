@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>labo-7.pl</title>
+
+<link rel="stylesheet" type="text/css" href="../../pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+
+<h1 class="file"><span style="float:right"></span>labo-7.pl</h1>
+
+<dl>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="sumintersec/3"><b class="pred">sumintersec</b><var class="arglist">(+List, +List, -Num)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sumintersec</b><var class="arglist">(-List, +List, -Num)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sumintersec</b><var class="arglist">(+List, -List, ?Num)</var> is <b class="det">det</b></dt><dd class="defbody">Devuelve la suma de los elementos resultantes de la intersección de dos listas ordenadas
+
+<p>
+Xs e Ys deben ser listas ordenadas</p>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- sumintersec([1,2,3], [2,3], N).
+N = 5.</pre>
+
+<p>
+?- <code>sumintersec([1,2,3], [2,3], 6)</code>.
+false.</p>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>Xs</var></td><td class="argdescr">- es la primera lista</td></tr>
+<tr><td><var>Ys</var></td><td class="argdescr">- es la segunda lista</td></tr>
+<tr><td><var>N</var></td><td class="argdescr">- es la suma de las intersecciones </td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="genList/3"><b class="pred">genList</b><var class="arglist">(+Num, +Num, -List)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">genList</b><var class="arglist">(-Num, ?Num, ?List)</var> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">genList</b><var class="arglist">(?Num, -Num, ?List)</var> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">genList</b><var class="arglist">(+Num, +Num, +List)</var> is <b class="det">det</b></dt><dd class="defbody">Genera una lista con números desde I hasta N.
+
+<p>
+Ejemplo:
+==
+?- <code>genList(2, 10, Ys)</code>.
+Ys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].</p>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>I</var></td><td class="argdescr">- número actual a meter en la lista</td></tr>
+<tr><td><var>N</var></td><td class="argdescr">- número máximo de la lista</td></tr>
+<tr><td><var>Ys</var></td><td class="argdescr">- lista de números </td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="eratostenes_aux/4"><b class="pred">eratostenes_aux</b><var class="arglist">(-Num, ?Num, ?List, ?List)</var></a> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">eratostenes_aux</b><var class="arglist">(?Num, -Num, ?List, ?List)</var> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">eratostenes_aux</b><var class="arglist">(?Num, ?Num, -List, ?List)</var> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">eratostenes_aux</b><var class="arglist">(+Num, +Num, +List, -List)</var> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">eratostenes_aux</b><var class="arglist">(+Num, +Num, +List, +List)</var> is <b class="det">det</b></dt><dd class="defbody">Hace la criba de Eratóstenes a un listado dado
+
+<p>
+Ejemplo:
+==
+?- <code>eratostenes_aux(2, 5, [2,3,4,5], Ps)</code>.
+Ps = [2,3,5].</p>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>I</var></td><td class="argdescr">- número actual</td></tr>
+<tr><td><var>N</var></td><td class="argdescr">- número hasta el que llega la lista</td></tr>
+<tr><td><var>L</var></td><td class="argdescr">- lista inicial</td></tr>
+<tr><td><var>Ps</var></td><td class="argdescr">- lista cribada </td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="eratostenes/2"><b class="pred">eratostenes</b><var class="arglist">(-Num, ?List)</var></a> is <b class="det">failure</b></dt>
+<dt class="pubdef"><b class="pred">eratostenes</b><var class="arglist">(+Num, ?List)</var> is <b class="det">det</b></dt><dd class="defbody">Genera una lista desde 2 hasta N y luego le hace la criba de Eratóstenes.
+
+<p>
+Ejemplo:
+==
+<code>eratostenes(5, Ps)</code>.
+Ps = [2,3,5].</p>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>N</var></td><td class="argdescr">- número al que llegar con la criba</td></tr>
+<tr><td><var>Ps</var></td><td class="argdescr">- lista cribada</td></tr>
+</table>
+
+</dd>
+<dt class="keyword-see">See also</dt><dd class="keyword-see">- <a href="labo-7.html#genList/3">genList/3</a></dd><dd class="keyword-see">- <a href="labo-7.html#eratostenes_aux/4">eratostenes_aux/4</a> </dd>
+</dl>
+
+</dd>
+</dl>
+
+<h2 class="undoc">Undocumented predicates</h2>
+
+<p>
+The following predicates are exported, but not or incorrectly documented.</p>
+
+<dl class="undoc">
+<dt class="undoc"><span style="float:right">&nbsp;</span><a name="quitaMultiplos/3"><b class="pred">quitaMultiplos</b><var class="arglist">(Arg1, Arg2, Arg3)</var></a></dt>
+<dt class="undoc"><span style="float:right">&nbsp;</span><a name="ramas/2"><b class="pred">ramas</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
+<dt class="undoc"><span style="float:right">&nbsp;</span><a name="rama/2"><b class="pred">rama</b><var class="arglist">(Arg1, Arg2)</var></a></dt>
+</dl>
+
+</body>
+</html>

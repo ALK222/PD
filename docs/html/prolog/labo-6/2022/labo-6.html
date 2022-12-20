@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>labo-6.pl</title>
+
+<link rel="stylesheet" type="text/css" href="../../pldoc.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+
+<h1 class="file"><span style="float:right"></span>labo-6.pl</h1>
+
+<dl>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="mas_por_encima_que2/2"><b class="pred">mas_por_encima_que2</b><var class="arglist">(+List:list, +List:list)</var></a> is <b class="det">nondet</b></dt><dd class="defbody">True si el elemento X tiene más elementos por encima que el elemento Y.
+
+<p>
+X e Y pueden ser de distintas pilas.</p>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- mas_por_encima_que(a,b).
+false.
+?- mas_por_encima_que(h,i).
+true.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- elemento a comparar</td></tr>
+<tr><td><var>Y</var></td><td class="argdescr">- elemento comparador</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="intercala/3"><b class="pred">intercala</b><var class="arglist">(+List:list, +List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">intercala</b><var class="arglist">(+List:list, +List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge dos listas y hace una mezcla de ambas
+
+<p>
+X e Y pueden ser de tipos distintos.</p>
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- intercala([1,2],[2,3],Y).
+Y=[1,2,2,3].
+?- intercala([1,2],[2,3],[1,a]).
+false.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>Xs</var></td><td class="argdescr">- Primera lista</td></tr>
+<tr><td><var>Ys</var></td><td class="argdescr">- Segunda lista</td></tr>
+<tr><td><var>Z</var></td><td class="argdescr">- Lista final</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="contenida/2"><b class="pred">contenida</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">contenida</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge una lista y comprueba si está dentro de otra
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- contenida([1,2],[1,2,3]).
+true.
+?- contenida([1,2],Y).
+Y= [a,c,d|_].</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>Xs</var></td><td class="argdescr">- Lista contenida</td></tr>
+<tr><td><var>Ys</var></td><td class="argdescr">- Lista total</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="sufijos/2"><b class="pred">sufijos</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sufijos</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge una lista y comprueba si es una lista de sufijos de otra
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- sufijos([1,2,3], [[1], [1,2], [1,2,3]]).
+true.</pre>
+
+<p>
+?- <code>sufijos(Xs, [[1], [1,2], [1,2,3]])</code>.
+Xs = [1,2,3].</p>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>Xs</var></td><td class="argdescr">- Lista de sufijos</td></tr>
+<tr><td><var>Yss</var></td><td class="argdescr">- Lista de listas</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="sufijo/2"><b class="pred">sufijo</b><var class="arglist">(+List:list, -List:list)</var></a> is <b class="det">det</b></dt>
+<dt class="pubdef"><b class="pred">sufijo</b><var class="arglist">(+List:list, +List:list)</var> is <b class="det">nondet</b></dt><dd class="defbody">Coge una lista y saca su sufijo
+
+<p>
+Ejemplo:</p>
+
+<pre class="code" ext="">
+?- sufijo(Z, [1,2,3]).
+Z = 3.
+?- contenida(1,[1,2,3]).
+false.</pre>
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>Z</var></td><td class="argdescr">- sufijo</td></tr>
+<tr><td><var>Ys</var></td><td class="argdescr">- Lista</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="numnodos3/2"><b class="pred">numnodos3</b><var class="arglist">(+Int:int, +Arbol:arbol)</var></a> is <b class="det">det</b></dt><dd class="defbody">Coge un arbol y devuelve su número de nodos
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- Numero de nodos</td></tr>
+<tr><td><var>T</var></td><td class="argdescr">- Árbol a contar</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+<dt class="pubdef"><span style="float:right">&nbsp;</span><a name="numnodos2/2"><b class="pred">numnodos2</b><var class="arglist">(+Int:int, +Arbol:arbol)</var></a> is <b class="det">det</b></dt><dd class="defbody">Coge un arbol y devuelve su número de nodos
+
+<dl class="tags">
+<dt class="tag">Arguments:</dt><dd>
+
+<table class="arglist">
+<tr><td><var>X</var></td><td class="argdescr">- Numero de nodos</td></tr>
+<tr><td><var>T</var></td><td class="argdescr">- Árbol a contar</td></tr>
+</table>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+</body>
+</html>
