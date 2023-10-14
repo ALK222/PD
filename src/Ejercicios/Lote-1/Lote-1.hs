@@ -247,3 +247,82 @@ i' x y = if x >= y && y > 0 then
     x-y
     else if x > 0 && y > x then
         0 else y - x
+
+-- =====================================================
+-- * EJERCICIO 3
+-- =====================================================  
+
+-- ** A)
+
+digitos :: Int -> Int
+digitos 0 = 0
+digitos x = digitos (x `div` 10) + 1
+
+-- ** B)
+sumaDigitos :: Int -> Int
+sumaDigitos x 
+    | x < 10 = x
+    | otherwise = x `mod` 10 + sumaDigitos (x `div` 10)
+
+reduccion :: Int -> Int
+reduccion x
+    | x < 0 = reduccion (-x)
+    | x < 10 = x
+    | otherwise = let y = sumaDigitos x in if y > 10 then reduccion y else y
+
+-- ** C)
+perm :: Int -> Int
+perm 0 = 1
+perm x = perm (x - 1) * x
+
+-- ** D)
+var :: Int -> Int -> Int
+var n m = perm n `div` perm (n - m)
+
+-- ** E)
+comb :: Int -> Int -> Int
+comb n m = perm n `div` (perm m * perm (n - m))
+
+-- =====================================================
+-- * EJERCICIO 4
+-- =====================================================  
+
+factores :: Integral a => a -> [a]
+{- |
+= Descripción
+
+Calcula todos los divisores de un número dado
+
+== Ejemplos
+
+>>> factores 10
+[1,2,5,10]
+-}
+factores n = [x | x <- [1 .. n], mod n x == 0]
+
+isPrime :: Integral a => a -> Bool
+{- |
+= Descripción
+
+Comprueba si un número es primo
+
+Usa 'factores'
+
+== Ejemplos
+
+>>> isPrime 10
+False
+
+>>> isPrime 5
+True
+-}
+isPrime n = factores n == [1, n]
+
+-- =====================================================
+-- * EJERCICIO 5
+-- =====================================================  
+
+fibonacci :: Int -> Integer
+fibonacci n = fibs !! n
+  where
+    fibs = 1 : 1 : zipWith (+) fibs (tail fibs) -- Vamos sumando el final de la cola al ultimo elemento
