@@ -124,7 +124,7 @@ sold :: Integer -> (Integer, Integer, Integer, Integer, Integer)
 {- |
 = Descripción
 
-Coje el tiempo dado y lo convierte a (Años, Días, Horas, Minutos, Segundos)
+Coge el tiempo dado y lo convierte a (Años, Días, Horas, Minutos, Segundos)
 
 == Ejemplos
 
@@ -141,3 +141,109 @@ sold x =
         let hours = div b hoursToSec
             c = mod b hoursToSec
   in (years, days, hours, div c minsToSec, mod c minsToSec)
+
+-- =====================================================
+-- * EJERCICIO 2
+-- =====================================================  
+
+f :: Int -> Int -> Int
+{- |
+
+= Descripción
+
+Función f usando notación infija
+
+== Ejemplos
+
+>>> f 7 4
+
+-}
+f x y = 2*x - y*x
+
+f' :: Int -> Int -> Int
+{- |
+
+= Descripción
+
+Función f usando notación prefija
+
+== Ejemplo
+
+>>> f' 7 4
+-}
+f' x y = (-) ((*) 2 x) ((*)y x)
+
+g :: Int -> Int
+{- |
+
+= Descripción 
+
+Función g
+
+== Ejemplo
+
+>>> g (-2)
+-}
+g x = f (f 2 x) (f x 1)
+
+h :: Int -> Int -> Int -> Int
+{- |
+
+= Descripción
+
+Función h usando notación infija
+
+== Ejemplo
+
+>>> h 1 2 3
+
+-}
+h x y z = f (f (x + 2*y) (g 3)) (5 - (g z) - y)
+
+h' :: Int -> Int -> Int -> Int
+{- |
+
+= Descripción
+
+Función h usando notación posfija
+
+== Ejemplo
+
+>>> h' 1 2 3
+
+-}
+h' x y z = f (f (x + ((*)2 y)) (g 3)) (((-) 5 ((-) (g z) y)))
+
+i :: Int -> Int -> Int
+{- |
+
+= Descripción
+
+Función i usando notación guardas
+
+== Ejemplo
+
+>>> i 1 2
+
+-}
+i x y 
+    | x >= y && y > 0 = x - y
+    | x > 0 && y > x = 0
+    |otherwise = y - x
+
+i' :: Int -> Int -> Int 
+{- |
+
+= Descripción
+
+Función i usando notación if _ then _ else
+
+== Ejemplo
+
+>>> i 1 2
+
+-}
+i' x y = if x >= y && y > 0 then
+    x-y
+    else if x > 0 && y > x then
+        0 else y - x

@@ -63,7 +63,7 @@ sol1b :: Integer -> (Integer, Integer, Integer, Integer, Integer)
 {- |
 = Descripción
 
-Coje el tiempo dado y lo convierte a (Años, Días, Horas, Minutos, Segundos)
+Coge el tiempo dado y lo convierte a (Años, Días, Horas, Minutos, Segundos)
 
 == Ejemplos
 
