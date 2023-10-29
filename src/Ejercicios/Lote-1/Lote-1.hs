@@ -144,7 +144,7 @@ sold x =
 
 -- =====================================================
 -- * EJERCICIO 2
--- =====================================================  
+-- =====================================================
 
 f :: Int -> Int -> Int
 {- |
@@ -156,6 +156,7 @@ Función f usando notación infija
 == Ejemplos
 
 >>> f 7 4
+-14
 
 -}
 f x y = 2*x - y*x
@@ -170,19 +171,21 @@ Función f usando notación prefija
 == Ejemplo
 
 >>> f' 7 4
+-14
 -}
 f' x y = (-) ((*) 2 x) ((*)y x)
 
 g :: Int -> Int
 {- |
 
-= Descripción 
+= Descripción
 
 Función g
 
 == Ejemplo
 
 >>> g (-2)
+32
 -}
 g x = f (f 2 x) (f x 1)
 
@@ -196,6 +199,7 @@ Función h usando notación infija
 == Ejemplo
 
 >>> h 1 2 3
+0
 
 -}
 h x y z = f (f (x + 2*y) (g 3)) (5 - (g z) - y)
@@ -210,6 +214,7 @@ Función h usando notación posfija
 == Ejemplo
 
 >>> h' 1 2 3
+0
 
 -}
 h' x y z = f (f (x + ((*)2 y)) (g 3)) (((-) 5 ((-) (g z) y)))
@@ -224,14 +229,15 @@ Función i usando notación guardas
 == Ejemplo
 
 >>> i 1 2
+0
 
 -}
-i x y 
+i x y
     | x >= y && y > 0 = x - y
     | x > 0 && y > x = 0
     |otherwise = y - x
 
-i' :: Int -> Int -> Int 
+i' :: Int -> Int -> Int
 {- |
 
 = Descripción
@@ -241,6 +247,7 @@ Función i usando notación if _ then _ else
 == Ejemplo
 
 >>> i 1 2
+0
 
 -}
 i' x y = if x >= y && y > 0 then
@@ -250,7 +257,7 @@ i' x y = if x >= y && y > 0 then
 
 -- =====================================================
 -- * EJERCICIO 3
--- =====================================================  
+-- =====================================================
 
 -- ** A)
 
@@ -260,7 +267,7 @@ digitos x = digitos (x `div` 10) + 1
 
 -- ** B)
 sumaDigitos :: Int -> Int
-sumaDigitos x 
+sumaDigitos x
     | x < 10 = x
     | otherwise = x `mod` 10 + sumaDigitos (x `div` 10)
 
@@ -285,7 +292,7 @@ comb n m = perm n `div` (perm m * perm (n - m))
 
 -- =====================================================
 -- * EJERCICIO 4
--- =====================================================  
+-- =====================================================
 
 factores :: Integral a => a -> [a]
 {- |
@@ -320,9 +327,23 @@ isPrime n = factores n == [1, n]
 
 -- =====================================================
 -- * EJERCICIO 5
--- =====================================================  
+-- =====================================================
 
 fibonacci :: Int -> Integer
+{- |
+= Descipción
+
+Funcion de fibonacci de aridad 1
+
+== Ejemplos
+
+>>> fibonacci 2
+2
+
+>>> fibonacci 100
+573147844013817084101
+
+-}
 fibonacci n = fibs !! n
   where
     fibs = 1 : 1 : zipWith (+) fibs (tail fibs) -- Vamos sumando el final de la cola al ultimo elemento
