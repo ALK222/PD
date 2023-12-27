@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "editorconfig.editorconfig",
         "haskell.haskell",
         "justusadam.language-haskell",
         "arthurwang.vsc-prolog"
