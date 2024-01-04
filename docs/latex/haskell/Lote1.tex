@@ -7,7 +7,10 @@ module Lote1 (
     yearsToSec', frontierInt, petaFlop'', fornl'', yearsToSec'', frontierDouble,
     time, totalYears, daysToSec, hoursToSec, minsToSec, years, days, hours,
     mins, segs, solc, sold, f, f', g, h, h', i, i', digitos, sumaDigitos,
-    reduccion, perm, var, comb, factores, isPrime, fibonacci
+    reduccion, perm, var, comb, factores, isPrime, fibonacci, y, o, no, implica,
+    eq, oEx, (&&&), (|||), (-->), (===), (||=), f8, media, last', init',
+    initLast, concat', auxList, take', drop', splitAt', nub, quicksort, and',
+    or', sum', product', lmedia, reverse', reverse''
   ) where\end{verbatim}}
 \haddockendheader
 
@@ -108,6 +111,8 @@ Power of operation of the Frontier since the beginning of time
 \item[\begin{tabular}{@{}l}
 time :: Integer
 \end{tabular}]
+{\haddockbegindoc
+Time for the exercise\par}
 \end{haddockdesc}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
@@ -322,33 +327,136 @@ Función i usando notación if {\char '137} then {\char '137} else\par
 \item[\begin{tabular}{@{}l}
 digitos :: Int -> Int
 \end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Gets the number of digits of a given value\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> digitos 1
+1
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> digitos 123912891289
+12
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \subsection{B)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 sumaDigitos :: Int -> Int
 \end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Adds every single digit of a given number\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumaDigitos 1
+1
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sumaDigitos 18982918192283429138194213189
+82
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
 reduccion :: Int -> Int
 \end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Adds digits (\haddockid{sumaDigitos}) from a number until de result is one single digit. Single digits bellow 0 are converted to positive values\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> reduccion (-1)
+1
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> reduccion 12893213913819238192312819
+2
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \subsection{C)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-perm :: Int -> Int
+perm :: Integer -> Integer
 \end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Permutations of a given number\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> perm 8
+40320
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \subsection{D)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-var :: Int -> Int -> Int
+var :: Integer -> Integer -> Integer
 \end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Variations of two given numbers\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> var 2 1
+2
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> var 123 5
+25928567280
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \subsection{E)}
 \begin{haddockdesc}
 \item[\begin{tabular}{@{}l}
-comb :: Int -> Int -> Int
+comb :: Integer -> Integer -> Integer
 \end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Combinations of two given numbers\par
+\subsection*{Examples}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> comb 2 1
+2
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> comb 12425 12423
+77184100
+
+\end{verbatim}}
+\end{quote}}
 \end{haddockdesc}
 \section{EJERCICIO 4}
 \begin{haddockdesc}
@@ -411,6 +519,403 @@ Funcion de fibonacci de aridad 1\par
 {\haddockverb\begin{verbatim}
 >>> fibonacci 100
 573147844013817084101
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 6}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+y :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Conjunction operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+o :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Disjunction operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+no :: Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Not operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+implica :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Implication operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+eq :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Equivalence operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+oEx :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Exclusive disjunction operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+({\char '46}{\char '46}{\char '46}) :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Conjunction operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+(|||) :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Disjunction operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+(-->) :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Implication operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+(===) :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Equivalence operator\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+(||=) :: Bool -> Bool -> Bool
+\end{tabular}]
+{\haddockbegindoc
+Exclusive disjunction operator\par}
+\end{haddockdesc}
+\section{EJERCICIO 8}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+f8 :: Int -> Int -> Int -> Int
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+La función toma tres argumentos y cumple con las siguientes condiciones:\par
+(i) Ser estricta en el primer argumento.\par
+(ii) No ser estricta ni en el segundo ni en el tercer argumento.\par
+(iii) Ser conjuntamente estricta en el segundo y tercer argumento.\par
+\subsection*{Examples}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> f8 1 undefined undefined
+1
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> f8 0 1 2
+3
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> f8 0 1 undefined
+Prelude.undefined
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 9}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+media :: (Fractional a, Integral a, Foldable t) => t a -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Arithmetic mean of a list of numbers\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> media [1,2,3,4]
+2.5
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\section{EJERCICIO 10}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+last' :: {\char 91}a{\char 93} -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Returns the last element of a given list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> last' [1,2,3,4]
+4
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+init' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Returns all element except the las one of a list\par
+\subsection*{Examples}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> init [1,2,3,4]
+[1,2,3]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+initLast :: {\char 91}a{\char 93} -> ({\char 91}a{\char 93}, a)
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Returns a tuple with the \haddockid{init'} of a list and the \haddockid{last'} of a list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> initLast [1,2,3,4]
+([1,2,3],4)
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+concat' :: {\char 91}{\char 91}a{\char 93}{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Concatenates all given lists into one\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> concat' [[1],[2,3],[4],[5]]
+[1,2,3,4,5]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+auxList :: Int -> Int -> Int -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Returns the elements of a list between two given indexes\par
+\subsection*{Examples}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> auxList 0 0 2 [1,2,3,4,5]
+[1,2,3]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+take' :: Int -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Takes the n first elements of a list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> take' 2 [1,2,3,4]
+[1,2]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+drop' :: Int -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Erases the n first elements of a list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> drop' 2 [1,2,3,4]
+[3,4]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+splitAt' :: Int -> {\char 91}a{\char 93} -> ({\char 91}a{\char 93}, {\char 91}a{\char 93})
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Splits a list in the given index\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> splitAt' 2 [1,2,3,4]
+([1,2],[3,4])
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+nub :: Eq a => {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Returns a list without the repeated values of the given list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> nub [1,2,3,4,1,2,3,4,3,2,6,4,2,0]
+[1,2,3,4,6,0]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+quicksort :: Ord a => {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Quicksort implementation\par
+\subsection*{Examples}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> quicksort [4,7,3,6,1,89,52,76,13,0,23]
+[0,1,3,4,6,7,13,23,52,76,89]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+and' :: {\char 91}Bool{\char 93} -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Conjunction of al elements of a list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> and' [True,False, True ]
+False
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+or' :: {\char 91}Bool{\char 93} -> Bool
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Disjunction of al elements of a list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> or' [True,False, True ]
+True
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+sum' :: {\char 91}Int{\char 93} -> Int
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Sum of al the numbers in the list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> sum' [1..100]
+5050
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+product' :: {\char 91}Integer{\char 93} -> Integer
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Product of al the numbers in the list\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> product' [2..5]
+120
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+lmedia :: {\char 91}{\char 91}{\char 91}a{\char 93}{\char 93}{\char 93} -> Float
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Mean of sizes of al elements in a list of lists\par}
+\end{haddockdesc}
+\section{EJERCICIO 11}
+\subsection{A)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+reverse' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Reverse a given list in o(n{\char '136}2) time\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> reverse' [1,2,3,4]
+[4,3,2,1]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+reverse'' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Description}
+Reverse a given list in o(n) time\par
+\subsection*{Example}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> reverse'' [1,2,3,4]
+[4,3,2,1]
 
 \end{verbatim}}
 \end{quote}}

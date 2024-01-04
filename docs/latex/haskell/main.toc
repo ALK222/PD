@@ -1,0 +1,136 @@
+\contentsline {chapter}{\numberline {1}\texttt {FormulasProposicionales}}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Types}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Functions}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Parsers}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Utilities}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Operations on Formulas}{8}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}IO}{10}{subsection.1.2.4}%
+\contentsline {chapter}{\numberline {2}\texttt {Interprete}}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}DATA TYPES}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}STACK OPERATIONS}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}INSTRUCTION OPERATIONS}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}EXECUTION}{16}{section.2.4}%
+\contentsline {section}{\numberline {2.5}IO EXECUTION}{16}{section.2.5}%
+\contentsline {section}{\numberline {2.6}EXAMPLES}{17}{section.2.6}%
+\contentsline {section}{\numberline {2.7}EXECUTION MODES}{18}{section.2.7}%
+\contentsline {section}{\numberline {2.8}UTILITIES}{19}{section.2.8}%
+\contentsline {chapter}{\numberline {3}\texttt {Labo1}}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}EJERCICIO 1}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}A)}{21}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}B)}{22}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}EJERCICIO 2}{23}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}A)}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}B)}{23}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}EJERCICIO 3}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}EJERCICIO 4}{24}{section.3.4}%
+\contentsline {section}{\numberline {3.5}EJERCICIO 5}{26}{section.3.5}%
+\contentsline {chapter}{\numberline {4}\texttt {Labo2}}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}EJERCICIO 1}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}A)}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}B)}{28}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}C)}{28}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}D)}{28}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}E)}{29}{subsection.4.1.5}%
+\contentsline {section}{\numberline {4.2}EJERCICIO 2}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}A)}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}B)}{30}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}C)}{31}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}D)}{31}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}EJERCICIO 3}{32}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}A)}{32}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}B)}{32}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}C)}{33}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}\texttt {Labo2_2022}}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}EJERCICIO 1}{35}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}A)}{35}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}B)}{36}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}C)}{37}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}D)}{38}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}E)}{39}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}EJERCICIO 2}{40}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}A)}{40}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}B)}{41}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}C)}{42}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}D)}{43}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}E)}{43}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}EJERCICIO 3}{44}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}A)}{44}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}B)}{45}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}C)}{46}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}D)}{47}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}E)}{48}{subsection.5.3.5}%
+\contentsline {chapter}{\numberline {6}\texttt {Labo3}}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}EJERCICIO 1}{51}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}A)}{51}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}B)}{52}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}C)}{53}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}D)}{54}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}E)}{54}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}F)}{55}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}G)}{56}{subsection.6.1.7}%
+\contentsline {section}{\numberline {6.2}EJERCICIO 2}{57}{section.6.2}%
+\contentsline {section}{\numberline {6.3}EJERCICIO 3}{58}{section.6.3}%
+\contentsline {section}{\numberline {6.4}EJERCICIO 4}{59}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}A)}{59}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}B)}{60}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}C)}{60}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}D)}{62}{subsection.6.4.4}%
+\contentsline {chapter}{\numberline {7}\texttt {Labo3_2022}}{65}{chapter.7}%
+\contentsline {section}{\numberline {7.1}EJERCICIO 1}{65}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}A)}{65}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}B)}{66}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}C)}{67}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}D)}{68}{subsection.7.1.4}%
+\contentsline {subsection}{\numberline {7.1.5}E)}{68}{subsection.7.1.5}%
+\contentsline {subsection}{\numberline {7.1.6}F)}{69}{subsection.7.1.6}%
+\contentsline {section}{\numberline {7.2}EJERCICIO 2}{70}{section.7.2}%
+\contentsline {section}{\numberline {7.3}EJERCICIO 3}{71}{section.7.3}%
+\contentsline {section}{\numberline {7.4}EJERCICIO 4}{71}{section.7.4}%
+\contentsline {section}{\numberline {7.5}EJERCICIO 5}{72}{section.7.5}%
+\contentsline {section}{\numberline {7.6}EJERCICIO 6}{73}{section.7.6}%
+\contentsline {chapter}{\numberline {8}\texttt {Labo4}}{77}{chapter.8}%
+\contentsline {section}{\numberline {8.1}EJERCICIO 1}{77}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}A)}{80}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}B)}{81}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}C)}{82}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}EJERCICIO 2}{82}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}A)}{84}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}B)}{85}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}C)}{86}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}EJERCICIO 3}{86}{section.8.3}%
+\contentsline {section}{\numberline {8.4}EJERCICIO 4}{87}{section.8.4}%
+\contentsline {chapter}{\numberline {9}\texttt {Labo5}}{89}{chapter.9}%
+\contentsline {section}{\numberline {9.1}EJERCICIO 1}{89}{section.9.1}%
+\contentsline {section}{\numberline {9.2}EJERCICIO 2}{90}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}A)}{91}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}B)}{93}{subsection.9.2.2}%
+\contentsline {section}{\numberline {9.3}EJERCICIO 3}{94}{section.9.3}%
+\contentsline {chapter}{\numberline {10}\texttt {Lote1}}{97}{chapter.10}%
+\contentsline {section}{\numberline {10.1}EJERCICIO 1}{97}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}A)}{97}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}B)}{100}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}C)}{101}{subsection.10.1.3}%
+\contentsline {subsection}{\numberline {10.1.4}D)}{103}{subsection.10.1.4}%
+\contentsline {section}{\numberline {10.2}EJERCICIO 2}{104}{section.10.2}%
+\contentsline {section}{\numberline {10.3}EJERCICIO 3}{107}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}A)}{107}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}B)}{108}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}C)}{110}{subsection.10.3.3}%
+\contentsline {subsection}{\numberline {10.3.4}D)}{110}{subsection.10.3.4}%
+\contentsline {subsection}{\numberline {10.3.5}E)}{111}{subsection.10.3.5}%
+\contentsline {section}{\numberline {10.4}EJERCICIO 4}{112}{section.10.4}%
+\contentsline {section}{\numberline {10.5}EJERCICIO 5}{113}{section.10.5}%
+\contentsline {section}{\numberline {10.6}EJERCICIO 6}{114}{section.10.6}%
+\contentsline {section}{\numberline {10.7}EJERCICIO 8}{116}{section.10.7}%
+\contentsline {section}{\numberline {10.8}EJERCICIO 9}{117}{section.10.8}%
+\contentsline {section}{\numberline {10.9}EJERCICIO 10}{118}{section.10.9}%
+\contentsline {section}{\numberline {10.10}EJERCICIO 11}{126}{section.10.10}%
+\contentsline {subsection}{\numberline {10.10.1}A)}{126}{subsection.10.10.1}%
+\contentsline {subsection}{\numberline {10.10.2}B)}{127}{subsection.10.10.2}%
+\contentsline {chapter}{\numberline {11}\texttt {Traductor}}{129}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Types}{130}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Functions}{132}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Generators}{132}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}Tree and List manipulators}{133}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}Utilities}{136}{subsection.11.2.3}%
+\contentsline {subsection}{\numberline {11.2.4}IO}{139}{subsection.11.2.4}%
