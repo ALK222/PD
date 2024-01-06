@@ -127,10 +127,13 @@
 \contentsline {section}{\numberline {10.10}EJERCICIO 11}{126}{section.10.10}%
 \contentsline {subsection}{\numberline {10.10.1}A)}{126}{subsection.10.10.1}%
 \contentsline {subsection}{\numberline {10.10.2}B)}{127}{subsection.10.10.2}%
-\contentsline {chapter}{\numberline {11}\texttt {Traductor}}{129}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Types}{130}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Functions}{132}{section.11.2}%
-\contentsline {subsection}{\numberline {11.2.1}Generators}{132}{subsection.11.2.1}%
-\contentsline {subsection}{\numberline {11.2.2}Tree and List manipulators}{133}{subsection.11.2.2}%
-\contentsline {subsection}{\numberline {11.2.3}Utilities}{136}{subsection.11.2.3}%
-\contentsline {subsection}{\numberline {11.2.4}IO}{139}{subsection.11.2.4}%
+\contentsline {chapter}{\numberline {11}\texttt {Lote2}}{129}{chapter.11}%
+\contentsline {section}{\numberline {11.1}EJERCICIO 1}{129}{section.11.1}%
+\contentsline {section}{\numberline {11.2}EJERCICIO 2}{138}{section.11.2}%
+\contentsline {chapter}{\numberline {12}\texttt {Traductor}}{139}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Types}{140}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Functions}{142}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Generators}{142}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Tree and List manipulators}{143}{subsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.2.3}Utilities}{146}{subsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.2.4}IO}{149}{subsection.12.2.4}%
