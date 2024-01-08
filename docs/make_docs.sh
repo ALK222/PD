@@ -22,5 +22,5 @@ addFiles ../src/Labos/
 addFiles ../src/Ejercicios/
 addFiles ../src/Practicas_Finales
 haddock -h --title="Prácticas Haskell" -o ./html/haskell $haskfiles -w
-haddock --latex -o ./latex/haskell $haskfiles -w --title="Prácticas Haskell"
+# haddock --latex -o ./latex/haskell $haskfiles -w --title="Prácticas Haskell"
 swipl -g "doc_server(4000),portray_text(true),use_module(library(doc_files)),doc_save('../src/Labos', [doc_root('./html/prolog'), recursive(true)])" -t halt -s $prolfiles
