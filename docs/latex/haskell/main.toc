@@ -128,12 +128,33 @@
 \contentsline {subsection}{\numberline {10.10.1}A)}{126}{subsection.10.10.1}%
 \contentsline {subsection}{\numberline {10.10.2}B)}{127}{subsection.10.10.2}%
 \contentsline {chapter}{\numberline {11}\texttt {Lote2}}{129}{chapter.11}%
-\contentsline {section}{\numberline {11.1}EJERCICIO 1}{129}{section.11.1}%
+\contentsline {section}{\numberline {11.1}EJERCICIO 1}{130}{section.11.1}%
 \contentsline {section}{\numberline {11.2}EJERCICIO 2}{138}{section.11.2}%
-\contentsline {chapter}{\numberline {12}\texttt {Traductor}}{139}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Types}{140}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Functions}{142}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}Generators}{142}{subsection.12.2.1}%
-\contentsline {subsection}{\numberline {12.2.2}Tree and List manipulators}{143}{subsection.12.2.2}%
-\contentsline {subsection}{\numberline {12.2.3}Utilities}{146}{subsection.12.2.3}%
-\contentsline {subsection}{\numberline {12.2.4}IO}{149}{subsection.12.2.4}%
+\contentsline {section}{\numberline {11.3}EJERCICIO 3}{139}{section.11.3}%
+\contentsline {section}{\numberline {11.4}EJERCICIO 4}{140}{section.11.4}%
+\contentsline {section}{\numberline {11.5}EJERCICIO 5}{141}{section.11.5}%
+\contentsline {section}{\numberline {11.6}EJERCICIO 6}{141}{section.11.6}%
+\contentsline {section}{\numberline {11.7}EJERCICIO 7}{142}{section.11.7}%
+\contentsline {section}{\numberline {11.8}EJERCICIO 8}{143}{section.11.8}%
+\contentsline {section}{\numberline {11.9}EJERCICIO 9}{143}{section.11.9}%
+\contentsline {section}{\numberline {11.10}EJERCICIO 10}{143}{section.11.10}%
+\contentsline {section}{\numberline {11.11}EJERCICIO 10}{144}{section.11.11}%
+\contentsline {chapter}{\numberline {12}\texttt {Lote3}}{147}{chapter.12}%
+\contentsline {section}{\numberline {12.1}EJERCICIO 1}{147}{section.12.1}%
+\contentsline {section}{\numberline {12.2}EJERCICIO 2}{148}{section.12.2}%
+\contentsline {section}{\numberline {12.3}EJERCICIO 3}{149}{section.12.3}%
+\contentsline {section}{\numberline {12.4}EJERCICIO 4}{151}{section.12.4}%
+\contentsline {section}{\numberline {12.5}EJERCICIO 5}{152}{section.12.5}%
+\contentsline {subsection}{\numberline {12.5.1}A)}{154}{subsection.12.5.1}%
+\contentsline {subsection}{\numberline {12.5.2}B)}{155}{subsection.12.5.2}%
+\contentsline {subsection}{\numberline {12.5.3}C)}{156}{subsection.12.5.3}%
+\contentsline {section}{\numberline {12.6}EJERCICIO 6}{157}{section.12.6}%
+\contentsline {section}{\numberline {12.7}EJERCICIO 7}{158}{section.12.7}%
+\contentsline {section}{\numberline {12.8}EJERCICIO 8}{158}{section.12.8}%
+\contentsline {chapter}{\numberline {13}\texttt {Traductor}}{161}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Types}{162}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Functions}{164}{section.13.2}%
+\contentsline {subsection}{\numberline {13.2.1}Generators}{164}{subsection.13.2.1}%
+\contentsline {subsection}{\numberline {13.2.2}Tree and List manipulators}{165}{subsection.13.2.2}%
+\contentsline {subsection}{\numberline {13.2.3}Utilities}{168}{subsection.13.2.3}%
+\contentsline {subsection}{\numberline {13.2.4}IO}{171}{subsection.13.2.4}%

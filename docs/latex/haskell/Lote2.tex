@@ -7,7 +7,16 @@ module Lote2 (
     first50powersof3, filtered1000powersof3, menores1000, menores1020,
     listaPotencias, listaPotencias2, listaPosNeg, listaPosNeg2,
     listaEnumeracion, getPos, getPosInv, filter2, filters, span, mapx, iguales,
-    cuantos, mayoria, menorA, menor, mayorA, mayor
+    cuantos, mayoria, menorA, menor, mayorA, mayor, ex, pt, listaDivisores,
+    listaParejas, esPerfecto, listaPerfectos, esPrimo, listadoPrimos,
+    listadoPrimosMenores1000, primosEntre200y500, primerPrimoMayorQue6923,
+    esProcesable, listaProcesables, divisoresPrimos, maxExp, fprimos, last',
+    reverse', all', any', concat', minimum, map', filter', takeWhile', take',
+    (+++), foldr1', foldl1', prefixes, suffixes, sublists, partss, perms, inits,
+    combinaciones, variaciones, sumandos, prodEscalar, numFilas, numColumnas,
+    fila, columna, productoMatricial, f, g, h, auxZ, auxG, auxL, f9, collatz,
+    traza, f', f'', f''', f'''', coll1, coll2, coll3, fix, fac1, facHO, length1,
+    lengthHO, (++++), appHO
   ) where\end{verbatim}}
 \haddockendheader
 
@@ -286,5 +295,233 @@ mayorA :: Int -> Int -> (Int -> Bool) -> Int
 \end{tabular}]
 \item[\begin{tabular}{@{}l}
 mayor :: Int -> (Int -> Bool) -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+ex :: Int -> Int -> (Int -> Bool) -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+pt :: Int -> Int -> (Int -> Bool) -> Bool
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 3}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+listaDivisores :: Int -> {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaParejas :: {\char 91}(Int, {\char 91}Int{\char 93}){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+esPerfecto :: Int -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaPerfectos :: {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+esPrimo :: Int -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listadoPrimos :: {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listadoPrimosMenores1000 :: {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+primosEntre200y500 :: {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+primerPrimoMayorQue6923 :: Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+esProcesable :: Int -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaProcesables :: {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+divisoresPrimos :: Int -> {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+maxExp :: Int -> Int -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+fprimos :: Int -> {\char 91}(Int, Int){\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 4}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+last' :: {\char 91}a{\char 93} -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+reverse' :: {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+all' :: {\char 91}a{\char 93} -> (a -> Bool) -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+any' :: {\char 91}a{\char 93} -> (a -> Bool) -> Bool
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+concat' :: {\char 91}{\char 91}a{\char 93}{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+minimum :: Ord a => {\char 91}a{\char 93} -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+map' :: {\char 91}a{\char 93} -> (a -> b) -> {\char 91}b{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+filter' :: {\char 91}a{\char 93} -> (a -> Bool) -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+takeWhile' :: {\char 91}a{\char 93} -> (a -> Bool) -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+take' :: {\char 91}a{\char 93} -> Int -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+(+++) :: {\char 91}a{\char 93} -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 5}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+foldr1' :: (a -> a -> a) -> {\char 91}a{\char 93} -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+foldl1' :: (a -> a -> a) -> {\char 91}a{\char 93} -> a
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 6}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+prefixes :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+suffixes :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sublists :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+partss :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+perms :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+inits :: {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+combinaciones :: Int -> {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+variaciones :: Eq a => Int -> {\char 91}a{\char 93} -> {\char 91}{\char 91}a{\char 93}{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+sumandos :: Int -> {\char 91}{\char 91}Int{\char 93}{\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 7}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+prodEscalar :: {\char 91}Float{\char 93} -> {\char 91}Float{\char 93} -> Float
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+numFilas :: {\char 91}{\char 91}Float{\char 93}{\char 93} -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+numColumnas :: {\char 91}{\char 91}Float{\char 93}{\char 93} -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+fila :: Int -> {\char 91}{\char 91}Float{\char 93}{\char 93} -> {\char 91}Float{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+columna :: Int -> {\char 91}{\char 91}Float{\char 93}{\char 93} -> {\char 91}Float{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+productoMatricial :: {\char 91}{\char 91}Float{\char 93}{\char 93} -> {\char 91}{\char 91}Float{\char 93}{\char 93} -> {\char 91}{\char 91}Float{\char 93}{\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 8}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+f :: Int -> {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+g :: Int -> Int -> {\char 91}Int{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+h :: (Int -> Bool) -> Int -> Int -> {\char 91}Int{\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 9}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+auxZ :: Int -> {\char 91}Int{\char 93} -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+auxG :: Int -> Int -> {\char 91}Int{\char 93} -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+auxL :: Int -> {\char 91}Int{\char 93} -> Int -> (Int, Int)
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+f9 :: Int -> {\char 91}Int{\char 93} -> {\char 91}(Int, Int){\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 10}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+collatz :: Integral a => a -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+traza :: Integral a => a -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+f' :: Integral a => a -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+f'' :: Integral a => a -> (Int, {\char 91}a{\char 93})
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+f''' :: Integral a => a -> {\char 91}(a, Int){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+f'''' :: {\char 91}(Int, Int){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+coll1 :: (Int, Int)
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+coll2 :: {\char 91}(Int, Int){\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+coll3 :: {\char 91}(Int, Int){\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 10}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+fix :: (a -> a) -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+fac1 :: (Eq a, Num a) => a -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+facHO :: (Eq a, Num a) => (a -> a) -> a -> a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+length1 :: Num p => {\char 91}a{\char 93} -> p
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+lengthHO :: Num p => ({\char 91}a{\char 93} -> p) -> {\char 91}a{\char 93} -> p
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+(++++) :: {\char 91}a{\char 93} -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+appHO :: ({\char 91}a{\char 93} -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}) -> {\char 91}a{\char 93} -> {\char 91}a{\char 93} -> {\char 91}a{\char 93}
 \end{tabular}]
 \end{haddockdesc}

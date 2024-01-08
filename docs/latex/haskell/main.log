@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.10)  5 JAN 2024 10:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.10)  7 JAN 2024 22:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1944,60 +1944,257 @@ Underfull \vbox (badness 1953) has occurred while \output is active []
 ]
 Chapter 11.
 
-Overfull \hbox (28.27066pt too wide) in paragraph at lines 11--11
+Overfull \hbox (28.27066pt too wide) in paragraph at lines 20--20
 []    \OT1/cmtt/m/n/9 listaEnumeracion, getPos, getPosInv, filter2, filters, span, mapx, iguales,[] 
  []
 
-[129]
-Overfull \hbox (694.2385pt too wide) in paragraph at lines 28--28
+
+Overfull \hbox (9.37088pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 cuantos, mayoria, menorA, menor, mayorA, mayor, ex, pt, listaDivisores,[] 
+ []
+
+
+Overfull \hbox (4.64594pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 listadoPrimosMenores1000, primosEntre200y500, primerPrimoMayorQue6923,[] 
+ []
+
+
+Overfull \hbox (14.09583pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 esProcesable, listaProcesables, divisoresPrimos, maxExp, fprimos, last',[] 
+ []
+
+
+Overfull \hbox (18.82077pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 reverse', all', any', concat', minimum, map', filter', takeWhile', take',[] 
+ []
+
+
+Overfull \hbox (32.9956pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 (+++), foldr1', foldl1', prefixes, suffixes, sublists, partss, perms, inits,[] 
+ []
+
+
+Overfull \hbox (18.82077pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 combinaciones, variaciones, sumandos, prodEscalar, numFilas, numColumnas,[] 
+ []
+
+
+Overfull \hbox (18.82077pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 fila, columna, productoMatricial, f, g, h, auxZ, auxG, auxL, f9, collatz,[] 
+ []
+
+
+Overfull \hbox (32.9956pt too wide) in paragraph at lines 20--20
+[]    \OT1/cmtt/m/n/9 traza, f', f'', f''', f'''', coll1, coll2, coll3, fix, fac1, facHO, length1,[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [129]
+Overfull \hbox (694.2385pt too wide) in paragraph at lines 37--37
  []\OT1/cmtt/m/n/9 [0,1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256,289,324,361,400,441,484,529,576,625,676,729,784,841,900,961,1024,1089,1156,1225,1296,1369,1444,1521,1600,1681,1764,1849,1936,2025,2116,2209,2304,2401,2500][] 
  []
 
 
-Overfull \hbox (694.2385pt too wide) in paragraph at lines 44--44
+Overfull \hbox (694.2385pt too wide) in paragraph at lines 53--53
  []\OT1/cmtt/m/n/9 [0,1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256,289,324,361,400,441,484,529,576,625,676,729,784,841,900,961,1024,1089,1156,1225,1296,1369,1444,1521,1600,1681,1764,1849,1936,2025,2116,2209,2304,2401,2500][] 
  []
 
 [130]
-Overfull \hbox (1851.85004pt too wide) in paragraph at lines 60--60
+Overfull \hbox (1851.85004pt too wide) in paragraph at lines 69--69
  []\OT1/cmtt/m/n/9 [(50,2500),(49,2401),(48,2304),(47,2209),(46,2116),(45,2025),(44,1936),(43,1849),(42,1764),(41,1681),(40,1600),(39,1521),(38,1444),(37,1369),(36,1296),(35,1225),(34,1156),(33,1089),(32,1024),(31,961),(30,900),(29,841),(28,784),(27,729),(26,676),(25,625),(24,576),(23,529),(22,484),(21,441),(20,400),(19,361),(18,324),(17,289),(16,256),(15,225),(14,196),(13,169),(12,144),(11,121),(10,100),(9,81),(8,64),(7,49),(6,36),(5,25),(4,16),(3,9),(2,4),(1,1),(0,0)][] 
  []
 
-[131]
-Overfull \hbox (2820.46378pt too wide) in paragraph at lines 92--92
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [131]
+Overfull \hbox (2820.46378pt too wide) in paragraph at lines 101--101
  []\OT1/cmtt/m/n/9 [1,3,9,27,81,243,729,2187,6561,19683,59049,177147,531441,1594323,4782969,14348907,43046721,129140163,387420489,1162261467,3486784401,10460353203,31381059609,94143178827,282429536481,847288609443,2541865828329,7625597484987,22876792454961,68630377364883,205891132094649,617673396283947,1853020188851841,5559060566555523,16677181699666569,50031545098999707,150094635296999121,450283905890997363,1350851717672992089,4052555153018976267,12157665459056928801,36472996377170786403,109418989131512359209,328256967394537077627,984770902183611232881,2954312706550833698643,8862938119652501095929,26588814358957503287787,79766443076872509863361,239299329230617529590083][] 
  []
 
 [132] [133]
-Overfull \hbox (6066.50104pt too wide) in paragraph at lines 156--156
+Overfull \hbox (6066.50104pt too wide) in paragraph at lines 165--165
  []\OT1/cmtt/m/n/9 [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],[1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256,289,324,361,400],[1,8,27,64,125,216,343,512,729,1000,1331,1728,2197,2744,3375,4096,4913,5832,6859,8000],[1,16,81,256,625,1296,2401,4096,6561,10000,14641,20736,28561,38416,50625,65536,83521,104976,130321,160000],[1,32,243,1024,3125,7776,16807,32768,59049,100000,161051,248832,371293,537824,759375,1048576,1419857,1889568,2476099,3200000],[1,64,729,4096,15625,46656,117649,262144,531441,1000000,1771561,2985984,4826809,7529536,11390625,16777216,24137569,34012224,47045881,64000000],[1,128,2187,16384,78125,279936,823543,2097152,4782969,10000000,19487171,35831808,62748517,105413504,170859375,268435456,410338673,612220032,893871739,1280000000],[1,256,6561,65536,390625,1679616,5764801,16777216,43046721,100000000,214358881,429981696,815730721,1475789056,2562890625,4294967296,6975757441,11019960576,16983563041,25600000000],[1,512,19683,262144,1953125,10077696,40353607,134217728,387420489,1000000000,2357947691,5159780352,10604499373,20661046784,38443359375,68719476736,118587876497,198359290368,322687697779,512000000000],[1,1024,59049,1048576,9765625,60466176,282475249,1073741824,3486784401,10000000000,25937424601,61917364224,137858491849,289254654976,576650390625,1099511627776,2015993900449,3570467226624,6131066257801,10240000000000]][] 
  []
 
-
-Overfull \hbox (18497.83151pt too wide) in paragraph at lines 172--172
+[134]
+Overfull \hbox (18497.83151pt too wide) in paragraph at lines 181--181
  []\OT1/cmtt/m/n/9 [[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288],[3,9,27,81,243,729,2187,6561,19683,59049,177147,531441,1594323,4782969,14348907,43046721,129140163,387420489,1162261467],[4,16,64,256,1024,4096,16384,65536,262144,1048576,4194304,16777216,67108864,268435456,1073741824,4294967296,17179869184,68719476736,274877906944],[5,25,125,625,3125,15625,78125,390625,1953125,9765625,48828125,244140625,1220703125,6103515625,30517578125,152587890625,762939453125,3814697265625,19073486328125],[6,36,216,1296,7776,46656,279936,1679616,10077696,60466176,362797056,2176782336,13060694016,78364164096,470184984576,2821109907456,16926659444736,101559956668416,609359740010496],[7,49,343,2401,16807,117649,823543,5764801,40353607,282475249,1977326743,13841287201,96889010407,678223072849,4747561509943,33232930569601,232630513987207,1628413597910449,11398895185373143],[8,64,512,4096,32768,262144,2097152,16777216,134217728,1073741824,8589934592,68719476736,549755813888,4398046511104,35184372088832,281474976710656,2251799813685248,18014398509481984,144115188075855872],[9,81,729,6561,59049,531441,4782969,43046721,387420489,3486784401,31381059609,282429536481,2541865828329,22876792454961,205891132094649,1853020188851841,16677181699666569,150094635296999121,1350851717672992089],[10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,10000000000,100000000000,1000000000000,10000000000000,100000000000000,1000000000000000,10000000000000000,100000000000000000,1000000000000000000,-8446744073709551616],[11,121,1331,14641,161051,1771561,19487171,214358881,2357947691,25937424601,285311670611,3138428376721,34522712143931,379749833583241,4177248169415651,45949729863572161,505447028499293771,5559917313492231481,5818858227285891443],[12,144,1728,20736,248832,2985984,35831808,429981696,5159780352,61917364224,743008370688,8916100448256,106993205379072,1283918464548864,15407021574586368,184884258895036416,2218611106740436992,8176589207175692288,5885350117560549376],[13,169,2197,28561,371293,4826809,62748517,815730721,10604499373,137858491849,1792160394037,23298085122481,302875106592253,3937376385699289,51185893014090757,665416609183179841,8650415919381337933,1774942509700083433,4627508552391533013],[14,196,2744,38416,537824,7529536,105413504,1475789056,20661046784,289254654976,4049565169664,56693912375296,793714773254144,11112006825558016,155568095557812224,2177953337809371136,-6402141418087907328,2603740515317055488,-441120932980326400],[15,225,3375,50625,759375,11390625,170859375,2562890625,38443359375,576650390625,8649755859375,129746337890625,1946195068359375,29192926025390625,437893890380859375,6568408355712890625,6292404967145601295,2152354138636261345,-4608176067875183057],[16,256,4096,65536,1048576,16777216,268435456,4294967296,68719476736,1099511627776,17592186044416,281474976710656,4503599627370496,72057594037927936,1152921504606846976,0,0,0,0],[17,289,4913,83521,1419857,24137569,410338673,6975757441,118587876497,2015993900449,34271896307633,582622237229761,9904578032905937,168377826559400929,2862423051509815793,-6679040345461786367,-2863221430593058543,6665467901046659617,2632489875535903793],[18,324,5832,104976,1889568,34012224,612220032,11019960576,198359290368,3570467226624,64268410079232,1156831381426176,20822964865671168,374813367582081024,6746640616477458432,-7687677419372609536,9195759040969441280,-497033925936021504,-8946610666848387072],[19,361,6859,130321,2476099,47045881,893871739,16983563041,322687697779,6131066257801,116490258898219,2213314919066161,42052983462257059,799006685782884121,-3265617043834753317,-6706491611731658175,1703867893065355987,-4519998179177339479,6353754964178307979],[20,400,8000,160000,3200000,64000000,1280000000,25600000000,512000000000,10240000000000,204800000000000,4096000000000000,81920000000000000,1638400000000000000,-4125488147419103232,-8722786653543858176,-8435036407491198976,-2680031486438014976,1739602492368355328]][] 
  []
 
-[134]
-Overfull \hbox (491.06586pt too wide) in paragraph at lines 188--188
+
+Overfull \hbox (491.06586pt too wide) in paragraph at lines 197--197
  []\OT1/cmtt/m/n/9 [1,-2,3,-4,5,-6,7,-8,9,-10,11,-12,13,-14,15,-16,17,-18,19,-20,21,-22,23,-24,25,-26,27,-28,29,-30,31,-32,33,-34,35,-36,37,-38,39,-40,41,-42,43,-44,45,-46,47,-48,49,-50][] 
  []
 
-
-Overfull \hbox (1265.95685pt too wide) in paragraph at lines 204--204
+[135]
+Overfull \hbox (1265.95685pt too wide) in paragraph at lines 213--213
  []\OT1/cmtt/m/n/9 [0,1,-1,2,-2,3,-3,4,-4,5,-5,6,-6,7,-7,8,-8,9,-9,10,-10,11,-11,12,-12,13,-13,14,-14,15,-15,16,-16,17,-17,18,-18,19,-19,20,-20,21,-21,22,-22,23,-23,24,-24,25,-25,26,-26,27,-27,28,-28,29,-29,30,-30,31,-31,32,-32,33,-33,34,-34,35,-35,36,-36,37,-37,38,-38,39,-39,40,-40,41,-41,42,-42,43,-43,44,-44,45,-45,46,-46,47,-47,48,-48,49,-49,50][] 
  []
 
-[135]
-Overfull \hbox (3562.28015pt too wide) in paragraph at lines 220--220
+
+Overfull \hbox (3562.28015pt too wide) in paragraph at lines 229--229
  []\OT1/cmtt/m/n/9 [(0,0),(1,0),(0,1),(2,0),(1,1),(0,2),(3,0),(2,1),(1,2),(0,3),(4,0),(3,1),(2,2),(1,3),(0,4),(5,0),(4,1),(3,2),(2,3),(1,4),(0,5),(6,0),(5,1),(4,2),(3,3),(2,4),(1,5),(0,6),(7,0),(6,1),(5,2),(4,3),(3,4),(2,5),(1,6),(0,7),(8,0),(7,1),(6,2),(5,3),(4,4),(3,5),(2,6),(1,7),(0,8),(9,0),(8,1),(7,2),(6,3),(5,4),(4,5),(3,6),(2,7),(1,8),(0,9),(10,0),(9,1),(8,2),(7,3),(6,4),(5,5),(4,6),(3,7),(2,8),(1,9),(0,10),(11,0),(10,1),(9,2),(8,3),(7,4),(6,5),(5,6),(4,7),(3,8),(2,9),(1,10),(0,11),(12,0),(11,1),(10,2),(9,3),(8,4),(7,5),(6,6),(5,7),(4,8),(3,9),(2,10),(1,11),(0,12),(13,0),(12,1),(11,2),(10,3),(9,4),(8,5),(7,6),(6,7),(5,8),(4,9),(3,10),(2,11),(1,12),(0,13),(14,0),(13,1),(12,2),(11,3),(10,4),(9,5),(8,6),(7,7),(6,8),(5,9),(4,10),(3,11),(2,12),(1,13),(0,14),(15,0),(14,1),(13,2),(12,3),(11,4),(10,5),(9,6),(8,7),(7,8),(6,9)][] 
  []
 
+[136]
+Underfull \vbox (badness 1168) has occurred while \output is active []
 
-Underfull \vbox (badness 1953) has occurred while \output is active []
+ [137] [138] [139] [140] [141] [142] [143] [144]) (./Lote3.tex [145] [146
 
- [136] [137]) (./Traductor.tex [138]
+]
 Chapter 12.
+
+Overfull \hbox (32.9956pt too wide) in paragraph at lines 12--12
+[]    \OT1/cmtt/m/n/9 Medible(medida), Exp(Div, Por, Menos, Mas, Num), eval, cuentaOps, cambiaOps,[] 
+ []
+
+
+Overfull \hbox (32.9956pt too wide) in paragraph at lines 12--12
+[]    \OT1/cmtt/m/n/9 operandos, Punto(P), pointSum, Direccion(DERECHA, IZQUIERDA, ABAJO, ARRIBA),[] 
+ []
+
+
+Overfull \hbox (14.09583pt too wide) in paragraph at lines 12--12
+[]    \OT1/cmtt/m/n/9 mueve, destino, trayectoria, inferior, Conjunto(Con), toC, interseccion,[] 
+ []
+
+
+Overfull \hbox (18.82077pt too wide) in paragraph at lines 12--12
+[]    \OT1/cmtt/m/n/9 union, mapSet, Asec(Acons, Void), long, nElem, separa, showSec, palabras,[] 
+ []
+
+
+Package tabulary Warning: No suitable columns! on input line 25.
+
+[147]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 25--25
+[]| 
+ []
+
+
+Package tabulary Warning: No suitable columns! on input line 57.
+
+[148]
+Overfull \hbox (6.0pt too wide) in paragraph at lines 57--57
+[]| 
+ []
+
+[149]
+Underfull \vbox (badness 7308) has occurred while \output is active []
+
+ [150]
+
+Package tabulary Warning: No suitable columns! on input line 131.
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 131--131
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 131--131
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 131--131
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 131--131
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 131--131
+[]| 
+ []
+
+
+Underfull \vbox (badness 3439) has occurred while \output is active []
+
+ [151]
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
+[]\OT1/cmr/bx/n/24.88 Con-struc-tor del
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [152]
+
+Package tabulary Warning: No suitable columns! on input line 215.
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 215--215
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 215--215
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 215--215
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 215--215
+[]| 
+ []
+
+[153] [154] [155]
+Overfull \hbox (127.24509pt too wide) in paragraph at lines 290--290
+ []\OT1/cmtt/m/n/9 >>> destino (P 0 0) [ARRIBA, ARRIBA, ABAJO, ABAJO, IZQUIERDA, DERECHA, IZQUIERDA, DERECHA][] 
+ []
+
+
+Overfull \hbox (51.64597pt too wide) in paragraph at lines 297--297
+ []\OT1/cmtt/m/n/9 >>> destino (P 0 0) [ARRIBA, ARRIBA, ABAJO, IZQUIERDA, IZQUIERDA, DERECHA][] 
+ []
+
+
+Overfull \hbox (146.14487pt too wide) in paragraph at lines 314--314
+ []\OT1/cmtt/m/n/9 >>> trayectoria (P 0 0) [ARRIBA, ARRIBA, ABAJO, ABAJO, IZQUIERDA, DERECHA, IZQUIERDA, DERECHA][] 
+ []
+
+[156]
+Overfull \hbox (70.54575pt too wide) in paragraph at lines 321--321
+ []\OT1/cmtt/m/n/9 >>> trayectoria (P 0 0) [ARRIBA, ARRIBA, ABAJO, IZQUIERDA, IZQUIERDA, DERECHA][] 
+ []
+
+
+Package tabulary Warning: No suitable columns! on input line 338.
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 338--338
+[]| 
+ []
+
+[157]
+
+Package tabulary Warning: No suitable columns! on input line 369.
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 369--369
+[]| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 369--369
+[]| 
+ []
+
+[158]) (./Traductor.tex [159] [160
+
+]
+Chapter 13.
 
 Overfull \hbox (9.37088pt too wide) in paragraph at lines 10--10
 []    \OT1/cmtt/m/n/9 rellenadoPorFicheroFijo, lecturaPalabras, mostrarTraducciones, demoMode[] 
@@ -2006,20 +2203,18 @@ Overfull \hbox (9.37088pt too wide) in paragraph at lines 10--10
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [139
-
-]
+ [161]
 Underfull \vbox (badness 4518) has occurred while \output is active []
 
- [140]
+ [162]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [141] [142] [143]
+ [163] [164] [165]
 Overfull \hbox (113.07025pt too wide) in paragraph at lines 134--134
  []\OT1/cmtt/m/n/9 >>> busqueda (insert genEmptyTree (hash "hola") ("hola", "hello")) (hash "hola") "hola"[] 
  []
 
-[144] [145] [146] [147] [148] [149]) [150] (./main.aux)
+[166] [167] [168] [169] [170] [171]) [172] (./main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-01>
@@ -2035,7 +2230,7 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  232C2A5D2CF91B3B54EDC26B8ED8FDC1;12921.
+(rerunfilecheck)             After:  6D0695C028A4998F6293B6ECA82FB85F;15210.
  )
 (\end occurred inside a group at level 2)
 
@@ -2043,18 +2238,18 @@ Package rerunfilecheck Info: Checksums for `main.out':
 ### simple group (level 1) entered at line 1 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 8490 strings out of 474272
- 129751 string characters out of 5750536
+ 8550 strings out of 474272
+ 130416 string characters out of 5750536
  1936530 words of memory out of 5000000
- 30011 multiletter control sequences out of 15000+600000
+ 30017 multiletter control sequences out of 15000+600000
  566637 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,9n,93p,4051b,907s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (150 pages, 253139 bytes).
+Output written on main.pdf (172 pages, 266587 bytes).
 PDF statistics:
- 1263 PDF objects out of 1440 (max. 8388607)
- 1078 compressed objects within 11 object streams
- 591 named destinations out of 1000 (max. 500000)
+ 1394 PDF objects out of 1440 (max. 8388607)
+ 1186 compressed objects within 12 object streams
+ 642 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,407 @@
+\haddockmoduleheading{Lote3}
+\label{module:Lote3}
+\haddockbeginheader
+{\haddockverb\begin{verbatim}
+module Lote3 (
+    Complejo(C), Arbol(N), showTree, listaHojas, listaNodos, repMax,
+    Medible(medida), Exp(Div, Por, Menos, Mas, Num), eval, cuentaOps, cambiaOps,
+    operandos, Punto(P), pointSum, Direccion(DERECHA, IZQUIERDA, ABAJO, ARRIBA),
+    mueve, destino, trayectoria, inferior, Conjunto(Con), toC, interseccion,
+    union, mapSet, Asec(Acons, Void), long, nElem, separa, showSec, palabras,
+    palabras', getInt, promedia, promediaAux
+  ) where\end{verbatim}}
+\haddockendheader
+
+\section{EJERCICIO 1}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Complejo
+\end{tabular}]
+{\haddockbegindoc
+Representación de un numero complejo\par
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{C Float Float} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Num Complejo
+\end{tabular}]
+{\haddockbegindoc
+Implementación especial para \haddockid{(+)} \haddockid{(-)} y \haddockid{(*)}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Complejo
+\end{tabular}]
+{\haddockbegindoc
+Representa el número como "a (+-) bi"\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq Complejo
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Eq\par}
+\end{haddockdesc}
+\section{EJERCICIO 2}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Arbol a
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{N a {\char 91}Arbol a{\char 93}} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show a => Show Arbol a\\instance Eq a => Eq Arbol a\\instance Ord a => Ord Arbol a
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+showTree :: Show a => Int -> Int -> Arbol a -> {\char 91}Char{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaHojas :: Arbol a -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+listaNodos :: Arbol a -> {\char 91}a{\char 93}
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+repMax :: Ord a => Arbol a -> Arbol a
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 3}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+class Medible a where
+\end{tabular}]
+{\haddockbegindoc
+Clase para medir otros tipos de datos\par
+\haddockpremethods{}\emph{Methods}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+medida
+\end{tabular}]
+{\haddockbegindoc
+\haddockbeginargs
+\haddockdecltt{::} & \haddockdecltt{a} & \\
+\haddockdecltt{->} & \haddockdecltt{Int} & Coge el dato dado y saca una medida de él \\
+\end{tabulary}\par}
+\end{haddockdesc}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Medible Bool
+\end{tabular}]
+{\haddockbegindoc
+Mediremos True como 0  y false como 1\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Medible a => Medible {\char 91}a{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+Suma todas las medidas de la lista\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance (Medible a, Medible b) => Medible (a, b)
+\end{tabular}]
+{\haddockbegindoc
+Suma la medida de los dos elementos dados\par}
+\end{haddockdesc}
+\section{EJERCICIO 4}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Exp
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{Num Int} & \\
+\haddockdecltt{|} & \haddockdecltt{Mas Exp Exp} & \\
+\haddockdecltt{|} & \haddockdecltt{Menos Exp Exp} & \\
+\haddockdecltt{|} & \haddockdecltt{Por Exp Exp} & \\
+\haddockdecltt{|} & \haddockdecltt{Div Exp Exp} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Exp
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+eval :: Exp -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+cuentaOps :: Exp -> Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+cambiaOps :: Exp -> Exp
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+operandos :: Exp -> {\char 91}Int{\char 93}
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 5}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Punto
+\end{tabular}]
+{\haddockbegindoc
+Representación de un punto de forma (x,y)\par
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{P} & Constructor del punto \\
+                                        & \qquad \haddockdecltt{Int} & Coordenada X \\
+                                        & \qquad \haddockdecltt{Int} & Coordenada Y \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Punto
+\end{tabular}]
+{\haddockbegindoc
+Muestra el punto como "(a,b)""\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+pointSum :: (Ord a, Num a) => a -> a -> a
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Suma un numero a una parte de una coordenada dada. Tiene como rango {\char 91}0 .. 100{\char 93}\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pointSum 100 10
+9
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pointSum 0 (-1)
+100
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> pointSum 100 1
+0
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Direccion
+\end{tabular}]
+{\haddockbegindoc
+Representación de una dirección\par
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{ARRIBA} & \\
+\haddockdecltt{|} & \haddockdecltt{ABAJO} & \\
+\haddockdecltt{|} & \haddockdecltt{IZQUIERDA} & \\
+\haddockdecltt{|} & \haddockdecltt{DERECHA} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Show Direccion
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Show\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq Direccion
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Eq\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Ord Direccion
+\end{tabular}]
+{\haddockbegindoc
+Derivación estandar de Ord\par}
+\end{haddockdesc}
+\subsection{A)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+mueve :: Punto -> Direccion -> Punto
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Mueve un punto en la dirección dada\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) IZQUIERDA
+(100,1)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) DERECHA
+(1,1)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) ARRIBA
+(0,2)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> mueve (P 0 1) ABAJO
+(0,0)
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{B)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+destino :: Punto -> {\char 91}Direccion{\char 93} -> Punto
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Mueve un punto en las direcciones dadas\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> destino (P 0 0) [ARRIBA, ARRIBA, ABAJO, ABAJO, IZQUIERDA, DERECHA, IZQUIERDA, DERECHA]
+(0,0)
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> destino (P 0 0) [ARRIBA, ARRIBA, ABAJO, IZQUIERDA, IZQUIERDA, DERECHA]
+(100,1)
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\subsection{C)}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+trayectoria :: Punto -> {\char 91}Direccion{\char 93} -> {\char 91}Punto{\char 93}
+\end{tabular}]
+{\haddockbegindoc
+\section*{Descripción}
+Mueve un punto en las direcciones dadas mostrando los puntos por los que se han pasado\par
+\subsection*{Ejemplos}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> trayectoria (P 0 0) [ARRIBA, ARRIBA, ABAJO, ABAJO, IZQUIERDA, DERECHA, IZQUIERDA, DERECHA]
+[(0,0),(0,1),(0,2),(0,1),(0,0),(100,0),(0,0),(100,0),(0,0)]
+
+\end{verbatim}}
+\end{quote}
+\begin{quote}
+{\haddockverb\begin{verbatim}
+>>> trayectoria (P 0 0) [ARRIBA, ARRIBA, ABAJO, IZQUIERDA, IZQUIERDA, DERECHA]
+[(0,0),(0,1),(0,2),(0,1),(100,1),(99,1),(100,1)]
+
+\end{verbatim}}
+\end{quote}}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+inferior :: {\char 91}Direccion{\char 93} -> {\char 91}Direccion{\char 93} -> Bool
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 6}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Conjunto a
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{Con Int {\char 91}a{\char 93}} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance Eq a => Eq Conjunto a\\instance Ord a => Ord Conjunto a
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+toC :: Eq a => {\char 91}a{\char 93} -> Conjunto a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+interseccion :: Eq a => Conjunto a -> Conjunto a -> Conjunto a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+union :: Eq a => Conjunto a -> Conjunto a -> Conjunto a
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+mapSet :: (Eq a, Eq b) => (a -> b) -> Conjunto a -> Conjunto b
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 7}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+data Asec a b
+\end{tabular}]
+{\haddockbegindoc
+\enspace \emph{Constructors}\par
+\haddockbeginconstrs
+\haddockdecltt{=} & \haddockdecltt{Void} & \\
+\haddockdecltt{|} & \haddockdecltt{Acons a Asec b a} & \\
+\end{tabulary}\par}
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+instance (Show a, Show b) => Show Asec a b\\instance (Eq a, Eq b) => Eq Asec a b\\instance (Ord a, Ord b) => Ord Asec a b
+\end{tabular}]
+\end{haddockdesc}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+long :: Num p => Asec a b -> p
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+nElem :: Int -> Asec a b -> Either a b
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+separa :: Asec a b -> ({\char 91}a{\char 93}, {\char 91}b{\char 93})
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+showSec :: (Show a, Show b) => Asec a b -> String
+\end{tabular}]
+\end{haddockdesc}
+\section{EJERCICIO 8}
+\begin{haddockdesc}
+\item[\begin{tabular}{@{}l}
+palabras :: String -> IO Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+palabras' :: IO ()
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+getInt :: IO Int
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+promedia :: IO ()
+\end{tabular}]
+\item[\begin{tabular}{@{}l}
+promediaAux :: {\char 91}Int{\char 93} -> IO ()
+\end{tabular}]
+\end{haddockdesc}
